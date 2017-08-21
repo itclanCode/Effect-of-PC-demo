@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<style type="text/css">
+		      *{
+		      	padding:0;
+		      	margin:0;
+		      }
+		      body{
+		      	 background:url("./img/bg.png");
+		      }
+		      #wrap{
+		      	 width:940px;
+		      	 height:610px;
+		      	 background:#000;
+		      	 margin:10px auto;
+		      }
+		      #wrap ul li{
+		      	  width:235px;
+		      	  height:610px;
+		      	  list-style:none;
+		      	  float:left;
+		      	  box-sizing:border-box;
+		      	  -webkit-box-sizing:border-box;
+		      	  position:relative;
+		      	  opacity:0.5;
+		      } 
+		      #wrap ul li:nth-of-type(1){
+		      	 background:url(./img/1.jpg) no-repeat;
+		      }
+		      #wrap ul li:nth-of-type(2){
+		      	 background:url(./img/2.jpg) no-repeat;
+		      }
+		      #wrap ul li:nth-of-type(3){
+		      	 background:url(./img/3.jpg) no-repeat;
+		      }
+		      #wrap ul li:nth-of-type(4){
+		      	 background:url(./img/4.jpg) no-repeat;
+		      }
+		      .info{
+		      	  width:200px;
+		      	  height:140px;
+		      	  background:rgba(0,0,0,0.5);
+		      	  margin:450px auto 0;
+		      	  color:#fff;
+		      }
+		      .info h3{
+		      	line-height:60px;
+		      	line-height:18px;
+		      	font-size:20px;
+		      	font-weight:normal;
+		      	font-family:"微软雅黑";
+		      	text-align:center;
+		      	border-bottom:1px solid #fff;
+		      }
+		      .info p{
+		       	 font-size:12px;
+		       	 text-align:center;
+		       	 margin-top:8px;
+		       }
+		       .cover{
+		       	 width:200px;
+		       	 height:140px;
+		       	 background:#E7E7E7;
+		       	 position:absolute;
+		       	 top:470px;
+		       	 left:50%;
+		       	 margin-left:-100px;
+		       	 text-indent:20px;
+		       	 box-shadow:0 0 5px #fff;
+		       	 opacity: 0
+		       }
+		       .cover .p1{
+		       	 line-height:35px;
+		       	 font-size:14px;
+		       	 border-bottom:1px solid #d4d4d4;
+		       }
+		       .cover .p2{
+		       	 font-size:12px;
+		       	 padding-top:5px;
+		       	 border-top:1px solid #f1f1f1;
+		       }
+		       .cover .p3{
+		       	 font-size:12px;
+		       	 padding:5px 0 25px;
+		       	 border-bottom:1px solid #f1f1f1;
+		       }
+		       .cover .p4{
+		       	 font-size:12px;
+		       	 color:#4BBFD0;
+		       	 border-top:1px solid #f1f1f1;
+		       }
+	</style>
+</head>
+<body>
+		<div id="wrap">
+			 	<ul>
+			 		<li>
+			 			<div class="info">
+			 				  <h3>《小时代:青木时代》</h3>
+			 				  <p>2013-08-09</p>
+			 				  <p>友情入门</p>
+			 			</div>
+			 			<div class="cover">
+			 					<p class="p1">友情挑战人性的暗黑面</p>
+			 					<p class="p2">导演:郭金明</p>
+			 					<p class="p3">主演:杨幂</p>
+			 					<p class="p4">17329想看</p>
+			 			</div>
+			 		</li>
+			 		<li>
+			 			<div class="info">
+			 				  <h3>《小时代:青木时代》</h3>
+			 				  <p>2013-08-09</p>
+			 				  <p>友情入门</p>
+			 			</div>
+			 			<div class="cover">
+			 					<p class="p1">友情挑战人性的暗黑面</p>
+			 					<p class="p2">导演:郭金明</p>
+			 					<p class="p3">主演:杨幂</p>
+			 					<p class="p4">17329想看</p>
+			 			</div>
+			 		</li>
+			 		<li>
+			 			<div class="info">
+			 				  <h3>《小时代:青木时代》</h3>
+			 				  <p>2013-08-09</p>
+			 				  <p>友情入门</p>
+			 			</div>
+			 			<div class="cover">
+			 					<p class="p1">友情挑战人性的暗黑面</p>
+			 					<p class="p2">导演:郭金明</p>
+			 					<p class="p3">主演:杨幂</p>
+			 					<p class="p4">17329想看</p>
+			 			</div>
+			 		</li>
+			 		<li>
+			 			<div class="info">
+			 				  <h3>《小时代:青木时代》</h3>
+			 				  <p>2013-08-09</p>
+			 				  <p>友情入门</p>
+			 			</div>
+			 			<div class="cover">
+			 					<p class="p1">友情挑战人性的暗黑面</p>
+			 					<p class="p2">导演:郭金明</p>
+			 					<p class="p3">主演:杨幂</p>
+			 					<p class="p4">17329想看</p>
+			 			</div>
+			 		</li>
+			 	</ul>
+		</div>
+
+		<script type="text/javascript" src="js/jquery-2.2.2.js"></script>
+		<script type="text/javascript">
+			      $("#wrap ul li").hover(function(){
+			      	  $(this).stop(true).animate({
+			      	  	  opacity:1
+			      	  },300);
+
+			      	  $(this).stop(true).find(".cover").animate({
+			      	  	  "top":"450px",
+			      	  	  "opacity":1
+			      	  },300);
+			      },function(){
+			      	  $(this).stop(true).animate({
+			      	  	   opacity:0.5
+			      	  }, 300);
+
+			      	  $(this).stop(true).find(".cover").animate({
+			      	  	  "top":"470px",
+			      	  	  "opacity":0
+			      	  },500)
+			      })
+		</script>
+</body>
+</html>
+<!-- 
+   stop():是把上次的动画给停止掉就可以了的,避免快速的滑动引起bug
+
+ -->
