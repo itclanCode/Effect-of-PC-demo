@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>轮播特效</title>
+	<link rel="stylesheet" type="text/css" href="css/轮播特效.css">
+</head>
+<body>
+	   <div id="box">
+		   	<ul class="img">
+		   		<li><img src="images/1.jpg" alt=""></li>
+		   		<li><img src="images/2.jpg" alt=""></li>
+		   		<li><img src="images/3.jpg" alt=""></li>
+		   	</ul>
+		   	<ul class="icon">
+		   		<li>
+		   			<p></p>
+		   		</li>
+		   		<li>
+		   			<p></p>
+		   		</li>
+		   		<li>
+		   			<p></p>
+		   		</li>
+		   	</ul>
+	   </div>
+	   <script src="js/jquery.js"></script>
+	   <script>
+	   	        var index = 0;  // 定义索引值初始值为0
+	   	        var timer = null;  // 定义定时器
+	   	        var $iLi = $("#box ul.icon li"); // 获取下方按钮li
+	   	        $iLi.hover(function(){
+	   	        	index = $(this).index(); // 获取每个小图标的序列号
+	   	        	$(this).stop().addClass("curr").siblings().removeClass("curr");  // 添加class,注意这个stop的使用把上一次的动画给停止掉
+	   	        	$(this).stop().children().css("width","30px").parent().siblings().children().stop().css("width","0px");
+                     $("#box ul.img").stop().animate({"left":-index*330+"px"},200);
+	   	             index++;
+	   	            //console.log("$iLi:"+n);
+	   	        })
+	   	        // 鼠标移到盒子时,定时器动画开始
+	   	        $("#box").hover(function(){  // 鼠标移进来
+                   clearInterval(timer);  // 清除定时器
+                   $ili.eq(index-1).children().stop().css("width","30px");
+	   	        },function(){  // 鼠标移开之后
+	   	        	index--;
+	   	        	$iLi.eq(index).children().stop().css("width","0px");
+	   	        	auto();
+	   	        	autoPlay();
+	   	        })
+	   	        // 定时器,让这个轮播特效自动轮播
+	   	       function autoPlay(){
+	   	       	  timer = setInterval(auto,2200);
+	   	       }
+	   	       function auto(){
+	   	       	 $iLi.eq(index).addClass("curr");
+	   	       	 $iLi.eq(index).children().animate({"width":"30px"},2000,function(){
+	   	       	 	$(this).css("width","0px").parent().removeClass("curr");
+	   	       	 	$("#box ul.img").animate({"left":-index*330+"px"},200);
+	   	       	 })
+	   	       	 index++;
+	   	       	 index%=3; //index = index%3; 0,1,2
+	   	       }
+	   	       autoPlay();
+	   </script>
+</body>
+</html>

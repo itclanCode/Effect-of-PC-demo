@@ -1,0 +1,46 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+#box{
+	width: 330px;
+	height: 360px;
+	margin: 100px auto;
+	overflow: hidden;
+	position: relative;
+	ul.img{
+		width: 990px;
+		position: relative;
+		li{
+		  list-style:none;
+		  float:left;
+		}
+	}
+	ul.icon{
+		position: absolute;
+		bottom: 20px;
+		left: 110px;
+		height: 6px;
+		li{
+			list-style:none;
+			width: 30px;
+			height: 4px;
+			background-color: #ccc;
+			float:left;
+			margin-left: 5px;
+			position: relative;
+			p{
+				height: 6px;
+				width: 0px;
+				position: absolute;
+				left: 0px;
+				top: 0px;
+				background:#f00;
+			}
+		}
+		li.curr{
+			height: 6px;
+			margin-top: -1px;
+		}
+	}
+}
