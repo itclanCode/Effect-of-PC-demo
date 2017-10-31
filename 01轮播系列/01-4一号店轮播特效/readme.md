@@ -1,2 +1,113 @@
 ### 1号店轮播特效
 
+效果展示
+
+![1号店轮播效果](images/1号店轮播效果.gif)
+
+### 布局代码如下
+
+	<div id="box">
+			<ul class="img">
+				<li><img src="images/1.jpg"/></li>
+				<li><img src="images/2.jpg"/></li>
+				<li><img src="images/3.jpg"/></li>
+			</ul>
+			<ul class="icon">
+				<li><p></p></li>
+				<li><p></p></li>
+				<li><p></p></li>
+			</ul>
+	</div>
+css代码
+
+*{margin:0px;padding:0px;}/*去除默认外边距、内边距*/
+
+		#box{
+		   width:330px;
+		   height:360px;
+		   margin:100px auto;
+		   overflow:hidden;
+		   position:relative;
+		}
+		#box ul.img{
+		   width:990px;
+		   position:relative;
+		}
+		#box ul.img li{
+		   list-style:none;
+		   float:left;
+	    }
+		#box ul.icon{
+		   position:absolute;
+		   bottom:20px;
+		   left:110px;
+		   height:6px;
+		}
+		#box ul.icon li{
+		   width:30px;
+		   height:4px;
+		   background:#ccc;
+		   list-style:none;
+		   float:left;
+		   margin-left:5px;
+		   position:relative;
+		 }
+		#box ul.icon li p{
+		   height:6px;
+		   width:0px;
+		   position:absolute;
+		   left:0px;
+		   top:0px;
+		   background:#f00;
+		}
+		#box ul.icon li.curr{
+		   height:6px;
+		   margin-top:-1px;
+		}
+js代码
+
+
+
+	<script>
+			var n = 0;
+			var time = null;
+			var $iLi = $("#box ul.icon li");
+			$iLi.hover(function(){ // 鼠标移入移出
+				n = $(this).index();//获取每个小图标的序列号
+				$(this).stop().addClass("curr").siblings().removeClass("curr");	       		  $(this).stop().children().css("width","30px").parent().siblings().children().stop().css("width","0px");
+				$("#box ul.img").stop().animate({"left":-n*330+"px"},200);
+				//console.log("$iLi:"+n);
+				n+=1;//n=n+1;
+			});
+			$("#box").hover(function(){   //鼠标移进来
+				clearInterval(time);      // 清除定时器
+				//console.log(n);
+				$iLi.eq(n-1).children().stop().css("width","30px");
+			},function(){				//鼠标移开
+				n-=1;//n=n-1;
+				$iLi.eq(n).children().stop().css("width","0px");
+				auto();
+				autoPlay();
+				//console.log("#box:"+n);
+			});
+			//定时器 让这个轮播特效自动轮播
+			function autoPlay(){
+				time = setInterval(auto,2200);
+			}
+			function auto(){
+				$iLi.eq(n).addClass("curr");
+				$iLi.eq(n).children().animate({"width":"30px"},2000,function(){
+					$(this).css("width","0px").parent().removeClass("curr");
+					$("#box ul.img").animate({"left":-n*330+"px"},200);
+				});
+				n++;//n=n+1
+				n%=3;//n=n%3  0-2
+			}
+			autoPlay();
+		</script>
+
+
+
+
+
+
