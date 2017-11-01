@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>点击图片随机切换</title>
+    <link rel="stylesheet" type="text/css" href="css/点击随机切换图片效果.css">
+</head>
+
+<body>
+    <div id="wrap">
+        <img src="images/1.jpg" alt="" width="100%" height="100%">
+    </div>
+
+    <script>
+    	    var index = 0;
+    	    var oWrap = document.getElementById('wrap');
+    	    var timer = null;   // 定义一个定时器
+    	    var onOff = true;   // 开关按钮
+    	    play();
+            function play(){
+            	 timer = setInterval(function(){
+                    index++;
+                    if(index>10){
+                       index = 1;
+                    }
+                    document.querySelector("img").src="images/"+index+".jpg"
+    	         },100);
+            }
+            // 事件操作
+            oWrap.onclick = function(){
+            	if(onOff){
+                   clearInterval(timer); // 清除定时器
+            	}else{
+                   play();
+            	}
+            	onOff = !onOff;
+            }
+    </script>
+</body>
+
+</html>

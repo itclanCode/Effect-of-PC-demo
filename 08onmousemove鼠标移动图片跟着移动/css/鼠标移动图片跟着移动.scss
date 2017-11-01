@@ -1,0 +1,48 @@
+*
+{
+    margin: 0;
+    padding: 0;
+}
+body
+{
+    overflow-x: hidden;
+
+    background: url('../img/bg.jpg') no-repeat center center/100% 100%;
+}
+#wrap
+{
+    position: relative;
+
+    height: 915px;
+    & > div
+    {
+        position: absolute;
+    }
+    .font
+    {
+        top: 20px;
+
+        width: 621px;
+        height: 202px;
+
+        background: url('../img/font.png');
+    }
+    .person
+    {
+        top: 50px;
+
+        width: 900px;
+        height: 800px;
+
+        background: url('../img/person.png');
+    }
+    .spring
+    {
+        top: 300px;
+
+        width: 934px;
+        height: 536px;
+
+        background: url('../img/spring.png');
+    }
+}

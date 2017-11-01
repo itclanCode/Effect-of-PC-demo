@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>桌面级拖拽</title>
+    <link rel="stylesheet" type="text/css" href="css/桌面级拖拽.css">
+</head>
+
+<body>
+    <script>
+    document.onmousedown = function(e) {
+        var e = e || event;
+        var x = e.clientX; // 鼠标x轴的坐标
+        var y = e.clientY; // 鼠标y轴的坐标
+        var box = document.createElement('div'); // 创建box元素
+        box.style.cssText = 'position:absolute;left:' + x + 'px;top:' + y + 'px;border:1px dotted black'; // 点状线边框
+
+        document.onmousemove = function(e) { // 鼠标按下时
+            var e = e || event;
+            var x1 = e.clientX; // 鼠标x轴的距离
+            var y1 = e.clientY; // 鼠标y轴的距离
+
+            var w = x < x1 ? x1 - x : x - x1; // 向右拖还是向左拖动,图片的宽度
+            var h = y < y1 ? y1 - y : y - y1; // 图片的高度
+
+            var l = x1 > x ? x : x - w; // 图片的left的值
+            var t = y1 > y ? y : y - h; // 图片top的值
+
+            box.style.cssText = 'position:absolute;width:' + w + 'px;height:' + h + 'px;left:' + l + 'px;top:' + t + 'px;border:1px dotted black';
+            document.body.appendChild(box); // 将box添加到bod里面去
+        }
+        document.onmouseup = function() { // 鼠标抬起
+            document.onmousemove = document.onmouseup = null;
+            var random = Math.floor(Math.random() * 20); // 随机数，20张图片
+            box.style.border = 0; // 去掉边框
+            box.style.background = 'url(img/' + random + '.jpg) no-repeat center center/100% 100%';
+
+        };
+        return false;
+    }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title鼠移动图片跟着移动效果</title>
+        <link rel="stylesheet" type="text/css" href="css/鼠标移动图片跟着移动.css">
+</head>
+
+<body>
+    
+        <div id="wrap">
+            <div class="font"></div>
+            <div class="person"></div>
+            <div class="spring"></div>
+        </div>
+    
+    <script>
+    var oWrap = document.querySelector("#wrap");
+    var aDiv = document.querySelectorAll("div");
+    move();
+    window.onresize = function() {
+        move();
+    }
+
+    function move() {
+        var arr = []; // 用一数组存储居中位置
+        var arrs = [0.04, 0.08, 0.06]; // 移动的系数
+        for (var i = 0; i < aDiv.length; i++) { // 循环长度
+            arr.push((oWrap.offsetWidth - aDiv[i].offsetWidth) / 2);
+            aDiv[i].style.left = arr[i] + 'px';
+        }
+        oWrap.onmousemove = function(e) { // 鼠标移动
+        	console.log("鼠标移动");
+            var e = e || event;
+            for (var i = 0; i < aDiv.length; i++) {
+                aDiv[i].style.left = e.clientX * arrs[i] + arr[i] + 'px';
+            }
+        }
+    }
+    </script>
+</body>
+
+</html>
