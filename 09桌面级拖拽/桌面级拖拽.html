@@ -9,13 +9,14 @@
 
 <body>
     <script>
+    // 鼠标按下
     document.onmousedown = function(e) {
         var e = e || event;
         var x = e.clientX; // 鼠标x轴的坐标
         var y = e.clientY; // 鼠标y轴的坐标
         var box = document.createElement('div'); // 创建box元素
         box.style.cssText = 'position:absolute;left:' + x + 'px;top:' + y + 'px;border:1px dotted black'; // 点状线边框
-
+        // 鼠标移动
         document.onmousemove = function(e) { // 鼠标按下时
             var e = e || event;
             var x1 = e.clientX; // 鼠标x轴的距离
@@ -30,6 +31,7 @@
             box.style.cssText = 'position:absolute;width:' + w + 'px;height:' + h + 'px;left:' + l + 'px;top:' + t + 'px;border:1px dotted black';
             document.body.appendChild(box); // 将box添加到bod里面去
         }
+        // 鼠标抬起
         document.onmouseup = function() { // 鼠标抬起
             document.onmousemove = document.onmouseup = null;
             var random = Math.floor(Math.random() * 20); // 随机数，20张图片
