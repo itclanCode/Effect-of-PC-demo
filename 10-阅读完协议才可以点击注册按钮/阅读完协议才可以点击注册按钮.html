@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>阅读完协议才可以点击注册按钮</title>
+</head>
+<body>
+     <header>
+         阅读完协议才可以单机的注册按钮
+     </header>
+     <p>
+         <textarea readonly="true" id="id-textarea-reg" onscroll="on_scroll_reg(this.id)" name="" id="" cols="30" rows="10">
+           阅读完协议才可以单机注册阅读完协议才可以单机注册阅读完协议才可以单机注册阅读完协议才可以单机注册阅读完协议才可以单机注册阅读完协议才可以单机注册阅读完协议才可以单机注册阅读完协议才可以单机注册阅读完协议才可以单机注册阅读完协议才可以单机注册阅读完协议才可以单机注册阅读完协议才可以单机注册阅读完协议才可以单机注册阅读完协议才可以单机注册阅读完协议才可以单机注册阅读完协议才可以单机注册阅读完协议才可以单机注册阅读完协议才可以单机注册
+        </textarea>
+     </p>
+     <button id="id-btn-reg" disabled>用户注册</button>
+     <script>
+         function on_scroll_reg(thisid) {
+             var textareaReg = document.getElementById(thisid);
+             var regBtn = document.getElementById("id-btn-reg");
+             if(textareaReg.scrollTop+textareaReg.clientHeight >= textareaReg.scrollHeight) {
+                regBtn.disabled = false;
+             }
+         }
+     </script>
+</body>
+</html>
