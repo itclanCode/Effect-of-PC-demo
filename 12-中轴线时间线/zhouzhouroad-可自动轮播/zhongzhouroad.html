@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>北京中轴线</title>
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="swiper-container">
+        <!-- 背景图开始 -->
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <!-- 介绍内容开始 -->
+            <div class="swiper-slide-info">
+              <img src="./images/钟鼓楼@3x.png" alt="" />
+            </div>
+            <!-- 介绍内容结束 -->
+          </div>
+          <div class="swiper-slide">
+            <div class="swiper-slide-info">
+              <img src="./images/太庙@3x.png" alt="" />
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="swiper-slide-info">
+              <img src="./images/天安门@3x.png" alt="" />
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="swiper-slide-info">
+              <img src="./images/正阳门及箭楼@3x.png" alt="" />
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="swiper-slide-info">
+              <img src="./images/天坛@3x.png" alt="" />
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="swiper-slide-info">
+              <img src="./images/先农坛@3x.png" alt="" />
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="swiper-slide-info">
+              <img src="./images/故宫@3x.png" alt="" />
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="swiper-slide-info">
+              <img src="./images/景山@3x.png" alt="" />
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="swiper-slide-info">
+              <img src="./images/社稷坛@3x.png" alt="" />
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="swiper-slide-info">
+              <img src="./images/永定门@3x.png" alt="" />
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="swiper-slide-info">
+              <img src="./images/万宁桥@3x.png" alt="" />
+            </div>
+          </div>
+        </div>
+        <!-- 背景图结束 -->
+        <!-- 侧边栏开始 -->
+        <div class="swiper-side">
+          <!-- 滑动条开始 -->
+          <div class="swiper-arrow"></div>
+          <!-- 滑动条结束 -->
+          <!-- 左侧中轴线开始 -->
+          <div class="swiper-left">
+            <!-- 顶部中轴线标题开始 -->
+            <div class="swiper-left-title">
+              <img src="../zhouzhouroad/images/中轴线@3x.png" alt="" />
+            </div>
+            <div class="swiper-left-dot">
+              <ul class="swiper-pagination-wrap">
+                <li class="zhonggu-default active" id="zhonggu-default"></li>
+                <li class="taimiao-default" id="taimiao-default"></li>
+                <li class="tianan-default" id="tianan-default"></li>
+                <li class="zhengyang-default" id="zhengyang-default"></li>
+                <li class="tiantan-default" id="tiantan-default"></li>
+                <li class="xiannong-default" id="xiannong-default"></li>
+                <li class="gugong-default" id="gugong-default"></li>
+                <li class="jinshan-default" id="jinshan-default"></li>
+                <li class="sheji-default" id="sheji-default"></li>
+                <li class="yongding-default" id="yongding-default"></li>
+                <li class="wanning-default" id="wanning-default"></li>
+              </ul>
+            </div>
+            <!-- 顶部中轴线标题结束 -->
+          </div>
+          <!-- 左侧中州线结束 -->
+        </div>
+        <!-- 侧边栏结束 -->
+      </div>
+    </div>
+    <script src="https://lib.baomitu.com/jquery/2.2.4/jquery.min.js"></script>
+    <script>
+      // JQ鼠标滚轮开始
+      (function (factory) {
+        if (typeof define === "function" && define.amd) {
+          // AMD. Register as an anonymous module.
+          define(["jquery"], factory);
+        } else if (typeof exports === "object") {
+          // Node/CommonJS style for Browserify
+          module.exports = factory;
+        } else {
+          // Browser globals
+          factory(jQuery);
+        }
+      })(function ($) {
+        var toFix = [
+            "wheel",
+            "mousewheel",
+            "DOMMouseScroll",
+            "MozMousePixelScroll",
+          ],
+          toBind =
+            "onwheel" in window.document || window.document.documentMode >= 9
+              ? ["wheel"]
+              : ["mousewheel", "DomMouseScroll", "MozMousePixelScroll"],
+          slice = Array.prototype.slice,
+          nullLowestDeltaTimeout,
+          lowestDelta;
+
+        if ($.event.fixHooks) {
+          for (var i = toFix.length; i; ) {
+            $.event.fixHooks[toFix[--i]] = $.event.mouseHooks;
+          }
+        }
+
+        var special = ($.event.special.mousewheel = {
+          version: "3.1.12",
+
+          setup: function () {
+            if (this.addEventListener) {
+              for (var i = toBind.length; i; ) {
+                this.addEventListener(toBind[--i], handler, false);
+              }
+            } else {
+              this.onmousewheel = handler;
+            }
+
+            // Store the line height and page height for this particular element
+            $.data(this, "mousewheel-line-height", special.getLineHeight(this));
+            $.data(this, "mousewheel-page-height", special.getPageHeight(this));
+          },
+
+          teardown: function () {
+            if (this.removeEventListener) {
+              for (var i = toBind.length; i; ) {
+                this.removeEventListener(toBind[--i], handler, false);
+              }
+            } else {
+              this.onmousewheel = null;
+            }
+
+            // Clean up the data we added to the element
+            $.removeData(this, "mousewheel-line-height");
+            $.removeData(this, "mousewheel-page-height");
+          },
+
+          getLineHeight: function (elem) {
+            var $elem = $(elem),
+              $parent =
+                $elem["offsetParent" in $.fn ? "offsetParent" : "parent"]();
+            if (!$parent.length) {
+              $parent = $("body");
+            }
+            return (
+              parseInt($parent.css("fontSize"), 10) ||
+              parseInt($elem.css("fontSize"), 10) ||
+              16
+            );
+          },
+
+          getPageHeight: function (elem) {
+            return $(elem).height();
+          },
+
+          settings: {
+            adjustOldDeltas: true, // see shouldAdjustOldDeltas() below
+            normalizeOffset: true, // calls getBoundingClientRect for each event
+          },
+        });
+
+        $.fn.extend({
+          mousewheel: function (fn) {
+            return fn ? this.on("mousewheel", fn) : this.trigger("mousewheel");
+          },
+
+          unmousewheel: function (fn) {
+            return this.off("mousewheel", fn);
+          },
+        });
+
+        function handler(event) {
+          var orgEvent = event || window.event,
+            args = slice.call(arguments, 1),
+            delta = 0,
+            deltaX = 0,
+            deltaY = 0,
+            absDelta = 0;
+          event = $.event.fix(orgEvent);
+          event.type = "mousewheel";
+
+          // Old school scrollwheel delta
+          if ("detail" in orgEvent) {
+            deltaY = orgEvent.detail * -1;
+          }
+          if ("wheelDelta" in orgEvent) {
+            deltaY = orgEvent.wheelDelta;
+          }
+          if ("wheelDeltaY" in orgEvent) {
+            deltaY = orgEvent.wheelDeltaY;
+          }
+          if ("wheelDeltaX" in orgEvent) {
+            deltaX = orgEvent.wheelDeltaX * -1;
+          }
+
+          // Firefox < 17 horizontal scrolling related to DOMMouseScroll event
+          if (
+            "axis" in orgEvent &&
+            orgEvent.axis === orgEvent.HORIZONTAL_AXIS
+          ) {
+            deltaX = deltaY * -1;
+            deltaY = 0;
+          }
+
+          // Set delta to be deltaY or deltaX if deltaY is 0 for backwards compatabilitiy
+          delta = deltaY === 0 ? deltaX : deltaY;
+
+          // New school wheel delta (wheel event)
+          if ("deltaY" in orgEvent) {
+            deltaY = orgEvent.deltaY * -1;
+            delta = deltaY;
+          }
+          if ("deltaX" in orgEvent) {
+            deltaX = orgEvent.deltaX;
+            if (deltaY === 0) {
+              delta = deltaX * -1;
+            }
+          }
+
+          // No change actually happened, no reason to go any further
+          if (deltaY === 0 && deltaX === 0) {
+            return;
+          }
+
+          // Need to convert lines and pages to pixels if we aren't already in pixels
+          // There are three delta modes:
+          //   * deltaMode 0 is by pixels, nothing to do
+          //   * deltaMode 1 is by lines
+          //   * deltaMode 2 is by pages
+          if (orgEvent.deltaMode === 1) {
+            var lineHeight = $.data(this, "mousewheel-line-height");
+            delta *= lineHeight;
+            deltaY *= lineHeight;
+            deltaX *= lineHeight;
+          } else if (orgEvent.deltaMode === 2) {
+            var pageHeight = $.data(this, "mousewheel-page-height");
+            delta *= pageHeight;
+            deltaY *= pageHeight;
+            deltaX *= pageHeight;
+          }
+
+          // Store lowest absolute delta to normalize the delta values
+          absDelta = Math.max(Math.abs(deltaY), Math.abs(deltaX));
+
+          if (!lowestDelta || absDelta < lowestDelta) {
+            lowestDelta = absDelta;
+
+            // Adjust older deltas if necessary
+            if (shouldAdjustOldDeltas(orgEvent, absDelta)) {
+              lowestDelta /= 40;
+            }
+          }
+
+          // Adjust older deltas if necessary
+          if (shouldAdjustOldDeltas(orgEvent, absDelta)) {
+            // Divide all the things by 40!
+            delta /= 40;
+            deltaX /= 40;
+            deltaY /= 40;
+          }
+
+          // Get a whole, normalized value for the deltas
+          delta = Math[delta >= 1 ? "floor" : "ceil"](delta / lowestDelta);
+          deltaX = Math[deltaX >= 1 ? "floor" : "ceil"](deltaX / lowestDelta);
+          deltaY = Math[deltaY >= 1 ? "floor" : "ceil"](deltaY / lowestDelta);
+
+          // Normalise offsetX and offsetY properties
+          if (special.settings.normalizeOffset && this.getBoundingClientRect) {
+            var boundingRect = this.getBoundingClientRect();
+            event.offsetX = event.clientX - boundingRect.left;
+            event.offsetY = event.clientY - boundingRect.top;
+          }
+
+          // Add information to the event object
+          event.deltaX = deltaX;
+          event.deltaY = deltaY;
+          event.deltaFactor = lowestDelta;
+
+          // Go ahead and set deltaMode to 0 since we converted to pixels
+          // Although this is a little odd since we overwrite the deltaX/Y
+          // properties with normalized deltas.
+          event.deltaMode = 0;
+
+          // Add event and delta to the front of the arguments
+          args.unshift(event, delta, deltaX, deltaY);
+
+          // Clearout lowestDelta after sometime to better
+          // handle multiple device types that give different
+          // a different lowestDelta
+          // Ex: trackpad = 3 and mouse wheel = 120
+          if (nullLowestDeltaTimeout) {
+            window.clearTimeout(nullLowestDeltaTimeout);
+          }
+          nullLowestDeltaTimeout = window.setTimeout(nullLowestDelta, 200);
+
+          return ($.event.dispatch || $.event.handle).apply(this, args);
+        }
+
+        function nullLowestDelta() {
+          lowestDelta = null;
+        }
+
+        function shouldAdjustOldDeltas(orgEvent, absDelta) {
+          return (
+            special.settings.adjustOldDeltas &&
+            orgEvent.type === "mousewheel" &&
+            absDelta % 120 === 0
+          );
+        }
+      });
+      // jQ鼠标滚轮结束
+
+      $(function () {
+        // 首次加载时
+        sendGif("1279.7078.gif");
+        var windowH = $(window).height(); // 获取文档可视区域的高度
+        var swiperWrapperH = $(".swiper-wrapper"); // 获取swiper-wrapper的可视区域的高度
+        var swiperLeft = $(".swiper-left"); // 获取左侧中轴线高度
+        var swiperSide = $(".swiper-side");
+        var swiperLeftUl = $(".swiper-left-dot ul");
+        var swiperLeftLi = $(".swiper-left-dot ul li");
+        var Time = new Date(); // 当滚轮滚得特别快时，会错乱，那么要控制滚轮之间的时间差，获取当前页面的时间
+        var _index = 0; // 定义一个索引
+        var timer = null; // 定义定时器
+        swiperWrapperH.css("height", windowH + "px");
+        swiperLeft.css("height", windowH - 37.5 + "px");
+        swiperSide.css("height", windowH + "px");
+        clearInterval(timer); // 清除定时器
+        // 点击列表
+        swiperLeftUl.on("click", "li", function () {
+          clearInterval(timer);
+          var id = $(this).attr("id");
+          sendGif("1279.4679.gif", { " _referer": id });
+          var index = $(this).index();
+          $(this).stop().addClass("active").siblings().removeClass("active");
+          $(".swiper-wrapper")
+            .find(".swiper-slide")
+            .eq(index)
+            .show()
+            .siblings()
+            .hide();
+          switch (index) {
+            case 0:
+              swiperLeftUl.css({ top: 0 + "px" });
+              break;
+            case 1:
+              swiperLeftUl.css({ top: 0 + "px" });
+              break;
+            case 2:
+              swiperLeftUl.css({ top: 0 + "px" });
+              break;
+            case 3:
+              swiperLeftUl.css({ top: 0 + "px" });
+              break;
+            case 4:
+              swiperLeftUl.css({ top: 0 + "px" });
+              break;
+            case 5:
+              swiperLeftUl.css({ top: -173 + "px" });
+              break;
+            case 6:
+              swiperLeftUl.css({ top: -257 + "px" });
+              break;
+            case 7:
+              swiperLeftUl.css({ top: -524 + "px" });
+              break;
+            case 8:
+              swiperLeftUl.css({ top: -530 + "px" });
+              break;
+            case 9:
+              swiperLeftUl.css({ top: -631 + "px" });
+              break;
+            case 10:
+              swiperLeftUl.css({ top: -525 + "px" });
+              break;
+            default:
+              return;
+          }
+        });
+
+        $(document).mousewheel(function (event, delta, deltaX, deltaY) {
+          clearInterval(timer);
+          if (new Date() - Time > 1000) {
+            // 当滚动的时候，上下滚动的时间差大于1s秒的时候，执行下面的动作，新的时间减去前面一个滚动的时间
+            Time = new Date(); //时间等于新的时间
+            delta == -1 ? _index++ : _index--;
+            // 到末尾的时候
+            if (_index > swiperLeftLi.length - 1) {
+              _index = 0;
+            }
+            if (_index < 0) {
+              _index = swiperLeftLi.length - 1;
+            }
+            swiperLeftUl
+              .find("li")
+              .eq(_index)
+              .stop()
+              .addClass("active")
+              .siblings()
+              .removeClass("active");
+            $(".swiper-wrapper")
+              .find(".swiper-slide")
+              .eq(_index)
+              .show()
+              .siblings()
+              .hide();
+          }
+          switch (_index) {
+            case 0:
+              swiperLeftUl.css({ top: 0 + "px" });
+              break;
+            case 1:
+              swiperLeftUl.css({ top: 0 + "px" });
+              break;
+            case 2:
+              swiperLeftUl.css({ top: 0 + "px" });
+              break;
+            case 3:
+              swiperLeftUl.css({ top: 0 + "px" });
+              break;
+            case 4:
+              swiperLeftUl.css({ top: 0 + "px" });
+              break;
+            case 5:
+              swiperLeftUl.css({ top: -173 + "px" });
+              break;
+            case 6:
+              swiperLeftUl.css({ top: -257 + "px" });
+              break;
+            case 7:
+              swiperLeftUl.css({ top: -524 + "px" });
+              break;
+            case 8:
+              swiperLeftUl.css({ top: -530 + "px" });
+              break;
+            case 9:
+              swiperLeftUl.css({ top: -631 + "px" });
+              break;
+            case 10:
+              swiperLeftUl.css({ top: -525 + "px" });
+              break;
+            default:
+              return;
+          }
+        });
+
+        // 定时器,让这个轮播特效自动轮播
+        function autoPlay() {
+          timer = setInterval(auto, 2200);
+        }
+
+        function auto() {
+          _index++;
+          if (_index > swiperLeftLi.length - 1) {
+            _index = 0;
+          }
+          if (_index < 0) {
+            _index = swiperLeftLi.length - 1;
+          }
+          swiperLeftUl
+            .find("li")
+            .eq(_index)
+            .stop()
+            .addClass("active")
+            .siblings()
+            .removeClass("active");
+          $(".swiper-wrapper")
+            .find(".swiper-slide")
+            .eq(_index)
+            .show()
+            .siblings()
+            .hide();
+        }
+        autoPlay();
+        switch (_index) {
+          case 0:
+            swiperLeftUl.css({ top: 0 + "px" });
+            break;
+          case 1:
+            swiperLeftUl.css({ top: 0 + "px" });
+            break;
+          case 2:
+            swiperLeftUl.css({ top: 0 + "px" });
+            break;
+          case 3:
+            swiperLeftUl.css({ top: 0 + "px" });
+            break;
+          case 4:
+            swiperLeftUl.css({ top: 0 + "px" });
+            break;
+          case 5:
+            swiperLeftUl.css({ top: -173 + "px" });
+            break;
+          case 6:
+            swiperLeftUl.css({ top: -257 + "px" });
+            break;
+          case 7:
+            swiperLeftUl.css({ top: -524 + "px" });
+            break;
+          case 8:
+            swiperLeftUl.css({ top: -530 + "px" });
+            break;
+          case 9:
+            swiperLeftUl.css({ top: -631 + "px" });
+            break;
+          case 10:
+            swiperLeftUl.css({ top: -525 + "px" });
+            break;
+          default:
+            return;
+        }
+      });
+
+      // 打点
+      function sendGif(filename, data) {
+        var files = [];
+        if (Object.prototype.toString.call(filename) == "[object String]") {
+          files.push(filename);
+        } else if (
+          Object.prototype.toString.call(filename) == "[object Array]"
+        ) {
+          files = filename;
+        } else {
+          return;
+        }
+        files.forEach(function (item) {
+          var params = "";
+          if (data && typeof data == "object") {
+            for (var k in data) {
+              params += k + "=" + data[k] + "&";
+            }
+          }
+          try {
+            new Image().src =
+              "//dd.browser.360.cn/static/a/" +
+              item +
+              "?" +
+              params +
+              "mid=" +
+              external.GetMID(external.GetSID(window)) +
+              "&t=" +
+              Date.now() +
+              Math.random().toString().replace("0.", "").substr(0, 10);
+          } catch (e) {}
+        });
+      }
+    </script>
+  </body>
+</html>

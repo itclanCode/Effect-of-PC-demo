@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>checkbox联动</title>
+    <style>
+        .sub-item {
+            margin: 10px 0 0 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="checkbox">
+        <label>
+            <input type="checkbox" value="111"  id="openHotNews" >
+            <span>
+                启用“360热点资讯”功能
+            </span>
+        </label>
+    </div>
+    <div class="sub-item">
+        <div class="checkbox">
+            <label>
+                <input type="checkbox" value="222"  id="openMessageTip">
+                <span>
+                    开启消息闪动提醒
+                </span>
+            </label>
+        </div>
+    </div>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+      var openHotNews = $("#openHotNews:checkbox:checked").val();
+      console.log(openHotNews);
+      
+    </script>
+</body>
+</html>
