@@ -1,0 +1,1083 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>北京中轴线</title>
+    <style>
+      @charset "utf-8";
+      * {
+        padding: 0;
+        margin: 0;
+      }
+
+      li {
+        list-style-type: none;
+      }
+
+      img {
+        vertical-align: top;
+        border: 0;
+      }
+
+      ol,
+      ul {
+        list-style: none;
+      }
+
+      .container {
+        width: 100%;
+        height: 100%;
+      }
+
+      .swiper-container {
+        position: relative;
+        overflow-y: hidden;
+      }
+
+      .swiper-wrapper {
+        width: 100%;
+        position: relative;
+      }
+
+      .swiper-wrapper .swiper-slide {
+        width: 100%;
+        height: 100%;
+        display:none;
+      }
+
+      .swiper-wrapper .swiper-slide:nth-of-type(1) {
+        background: url("https://p1.ssl.qhimg.com/t013aea4907ce2936da.jpg")
+          no-repeat;
+        background-size: cover;
+        background-position: center center;
+        display:block;
+      }
+
+      .swiper-wrapper .swiper-slide:nth-of-type(2) {
+        background: url("https://p5.ssl.qhimg.com/t016433825233a2db19.jpg")
+          no-repeat;
+        background-size: cover;
+        background-position: center center;
+      }
+
+      .swiper-wrapper .swiper-slide:nth-of-type(3) {
+        background: url("https://p0.ssl.qhimg.com/t01677a588c5f5fb17a.jpg")
+          no-repeat;
+        background-size: cover;
+        background-position: center center;
+      }
+
+      .swiper-wrapper .swiper-slide:nth-of-type(4) {
+        background: url("https://p5.ssl.qhimg.com/t012142101dbb8d684e.jpg")
+          no-repeat;
+        background-size: cover;
+        background-position: center center;
+      }
+
+      .swiper-wrapper .swiper-slide:nth-of-type(5) {
+        background: url("https://p3.ssl.qhimg.com/t014bb81cb17d0fb2a9.jpg")
+          no-repeat;
+        background-size: cover;
+        background-position: center center;
+      }
+
+      .swiper-wrapper .swiper-slide:nth-of-type(6) {
+        background: url("https://p4.ssl.qhimg.com/t0158a888d6ecd74fe4.jpg")
+          no-repeat;
+        background-size: cover;
+        background-position: center center;
+      }
+
+      .swiper-wrapper .swiper-slide:nth-of-type(7) {
+        background: url("https://p0.ssl.qhimg.com/t0146a5a893d06a710b.jpg")
+          no-repeat;
+        background-size: cover;
+        background-position: center center;
+      }
+
+      .swiper-wrapper .swiper-slide:nth-of-type(8) {
+        background: url("https://p4.ssl.qhimg.com/t01af6de176251096b9.jpg")
+          no-repeat;
+        background-size: cover;
+        background-position: center center;
+      }
+
+      .swiper-wrapper .swiper-slide:nth-of-type(9) {
+        background: url("https://p3.ssl.qhimg.com/t0127cdec7f4a64815f.jpg")
+          no-repeat;
+        background-size: cover;
+        background-position: center center;
+      }
+
+      .swiper-wrapper .swiper-slide:nth-of-type(10) {
+        background: url("https://p2.ssl.qhimg.com/t0196391555526c2c2d.jpg")
+          no-repeat;
+        background-size: cover;
+        background-position: center center;
+      }
+
+      .swiper-wrapper .swiper-slide:nth-of-type(11) {
+        background: url("https://p4.ssl.qhimg.com/t019afbffebb8fd2513.jpg")
+          no-repeat;
+        background-size: cover;
+        background-position: center center;
+      }
+
+      .swiper-wrapper .swiper-slide .swiper-slide-info {
+        width: 100%;
+        height: 100%;
+        background: url("https://p2.ssl.qhimg.com/t01e98758c695731b70.png")
+          no-repeat bottom;
+        background-size: 100%;
+      }
+
+       @media screen and (min-width: 1024px) {
+        .swiper-wrapper .swiper-slide .swiper-slide-info img {
+          background-size: 100%;
+          width:1000px;
+          max-width: 1478px;
+          height: 166px;
+          position: absolute;
+          right: 82px;
+          bottom: 76px;
+        }
+        /* 执行下面的css代码 */
+      }
+
+      .swiper-wrapper .swiper-slide .swiper-slide-info img {
+        background-size: contain;
+        /*width: 739px;*/
+        /*height: 83px;*/
+        /*width:739px;
+        max-width: 1478px;*/
+        /*height: 166px;*/
+        height:166px;
+        position: absolute;
+        right: 82px;
+        bottom: 50px;
+      }
+
+      /* 背景图结束 */
+      .swiper-side {
+        display: flex;
+        width: 100%;
+        background: url("https://p3.ssl.qhimg.com/t011a62248bf36e9f03.png")
+          no-repeat left;
+        background-size: cover;
+        position: absolute;
+        left: 0;
+        top: 0;
+        overflow: hidden;
+      }
+      /* 左侧滑动条开始 */
+      .swiper-arrow {
+        width: 15px;
+        height: 117px;
+        position: absolute;
+        top: 50%;
+        left: 20px;
+        margin-top: -58.5px;
+        background: url("https://p0.ssl.qhimg.com/t012b3107f7e4a10714.png")
+          no-repeat center center;
+        background-size: cover;
+        z-index: 2;
+        animation: arrow ease-in 3s;
+        -webkit-animation: arrow ease-in 3s;
+        animation-fill-mode: forwards;
+      }
+      /* 左侧滑动条结束 */
+      /* 左侧中轴线部分开始 */
+      .swiper-left {
+     /*   width: 133.5px;*/
+        position: absolute;
+        left: 51px;
+        top: 60px;
+        text-align: center;
+        overflow-y: auto;
+        overflow-x:hidden;
+      }
+
+      .swiper-left::-webkit-scrollbar {
+        display: none;
+      }
+
+       .swiper-side:after {
+        content: "";
+        display: block;
+        width: 6px;
+        height: 100%;
+        background: #fced98;
+        position: absolute;
+        left: 125px;
+        top: 60px;
+        z-index: 1;
+      }
+      .swiper-left-title {
+        position: fixed;
+        z-index: 3;
+        left: 67px;
+        top:37px;
+      }
+
+      .swiper-left-title img {
+        width: 133.5px;
+        height: 34.5px;
+        display: inline-block;
+      }
+
+      .swiper-left-dot {
+        position: relative;
+        z-index: 2;
+        overflow:hidden;
+      }
+
+      .swiper-left-dot ul {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .swiper-left-dot .swiper-pagination-wrap {
+        position: relative;
+      }
+
+      .swiper-left-dot ul li {
+        margin: -20px 0 0px 0;
+      }
+
+      .swiper-left-dot ul li.zhonggu-default {
+        width: 150px;
+        height: 150px;
+        background: url("https://p5.ssl.qhimg.com/t01f18c3e6715e79ee9.png")
+          no-repeat center;
+        background-size: cover;
+        cursor: pointer;
+        /*margin-top:20px;*/
+      }
+
+      .swiper-left-dot ul li.zhonggu-default:hover {
+        width: 150px;
+        height: 150px;
+        background: url("https://p1.ssl.qhimg.com/t01cbfdfea7804b71b3.png")
+          no-repeat center;
+        background-size: cover;
+      }
+
+      .swiper-left-dot ul li.taimiao-default {
+        width: 150px;
+        height: 150px;
+        background: url("https://p2.ssl.qhimg.com/t01e1478fc8619ef8e5.png")
+          no-repeat center;
+        background-size: 100%;
+        cursor: pointer;
+        margin-top:-50px;
+      }
+
+      .swiper-left-dot ul li.taimiao-default:hover {
+        width: 150px;
+        height: 150px;
+        background: url("https://p2.ssl.qhimg.com/t01e1478fc8619ef8e5.png")
+          no-repeat center;
+        background-size: cover;
+      }
+
+      .swiper-left-dot ul li.tianan-default {
+        width: 150px;
+        height: 150px;
+        background: url("https://p4.ssl.qhimg.com/t01daa7fffdbc250182.png")
+          no-repeat center;
+        background-size: cover;
+        cursor: pointer;
+        margin-top:-50px;
+      }
+
+      .swiper-left-dot ul li.tianan-default:hover {
+        width: 150px;
+        height: 150px;
+        background: url("https://p3.ssl.qhimg.com/t01d089f177afa458b4.png")
+          no-repeat center;
+        background-size: cover;
+      }
+
+      .swiper-left-dot ul li.zhengyang-default {
+        width: 150px;
+        height: 150px;
+        background: url("https://p2.ssl.qhimg.com/t018077a4d6ae428dd7.png")
+          no-repeat center;
+        background-size: cover;
+        cursor: pointer;
+        margin-top:-50px;
+      }
+
+      .swiper-left-dot ul li.zhengyang-default:hover {
+        width: 150px;
+        height: 150px;
+        background: url("https://p4.ssl.qhimg.com/t0123e30e93f7ccb6b7.png")
+          no-repeat center;
+        background-size: cover;
+      }
+
+      .swiper-left-dot ul li.tiantan-default {
+        width: 150px;
+        height: 150px;
+        background: url("https://p4.ssl.qhimg.com/t015ea31b64c98dcf05.png")
+          no-repeat center;
+        background-size: 100%;
+        cursor: pointer;
+        margin-top:-50px;
+      }
+
+      .swiper-left-dot ul li.tiantan-default:hover {
+        width: 150px;
+        height: 150px;
+        background: url("https://p4.ssl.qhimg.com/t010df6473bcb6d969c.png")
+          no-repeat center;
+        background-size: 100%;
+      }
+
+      .swiper-left-dot ul li.xiannong-default {
+        width: 150px;
+        height: 150px;
+        background: url("https://p3.ssl.qhimg.com/t0168bb94d56519408d.png")
+          no-repeat center;
+        background-size: 100%;
+        cursor: pointer;
+        margin-top:-50px;
+      }
+
+      .swiper-left-dot ul li.xiannong-default:hover {
+        width: 150px;
+        height: 150px;
+        background: url("https://p0.ssl.qhimg.com/t018da70e85e2778035.png")
+          no-repeat center;
+        background-size: cover;
+      }
+
+      .swiper-left-dot ul li.gugong-default {
+        width:150px;
+        height: 150px;
+        background: url("https://p4.ssl.qhimg.com/t01a13a8ac316b75e0d.png")
+          no-repeat center;
+        background-size: 100%;
+        cursor: pointer;
+        margin-top:-50px;
+      }
+
+      .swiper-left-dot ul li.gugong-default:hover {
+        width: 150px;
+        height: 150px;
+        background: url("https://p1.ssl.qhimg.com/t01fc26d2fcf86f898a.png")
+          no-repeat center;
+        background-size: cover;
+      }
+
+      .swiper-left-dot ul li.jinshan-default {
+        width: 150px;
+        height: 150px;
+        background: url("https://p5.ssl.qhimg.com/t016fe07857885256ee.png")
+          no-repeat center;
+        background-size: 100%;
+        cursor: pointer;
+        margin-top:-50px;
+      }
+
+      .swiper-left-dot ul li.jinshan-default:hover {
+        width: 150px;
+        height: 150px;
+        background: url("https://p1.ssl.qhimg.com/t01275f07c09d369fcd.png")
+          no-repeat center;
+        background-size: 100%;
+      }
+
+      .swiper-left-dot ul li.sheji-default {
+        width: 150px;
+        height: 150px;
+        background: url("https://p0.ssl.qhimg.com/t01ffd28ebf360b9c4b.png")
+          no-repeat center;
+        background-size: 100%;
+        cursor: pointer;
+        margin-top:-50px;
+      }
+
+      .swiper-left-dot ul li.sheji-default:hover {
+        width: 150px;
+        height: 150px;
+        background: url("https://p2.ssl.qhimg.com/t01f24f2d8391314bbb.png")
+          no-repeat center;
+        background-size:100%;
+      }
+
+      .swiper-left-dot ul li.yongding-default {
+        width: 150px;
+        height: 150px;
+        background: url("https://p5.ssl.qhimg.com/t0126929e045d924c3f.png")
+          no-repeat center;
+        background-size: 100%;
+        cursor: pointer;
+        margin-top:-50px;
+      }
+
+      .swiper-left-dot ul li.yongding-default:hover {
+        width: 150px;
+        height: 150px;
+        background: url("https://p2.ssl.qhimg.com/t013f2fe88789eeb1c4.png")
+          no-repeat center;
+        background-size:100%;
+      }
+
+      .swiper-left-dot ul li.wanning-default {
+        width: 150px;
+        height: 150px;
+        background: url("https://p3.ssl.qhimg.com/t01b93b3bd9be1c0190.png")
+          no-repeat center;
+        background-size: 100%;
+        cursor: pointer;
+        margin-bottom: 150px;
+        margin-top:-50px;
+      }
+
+      .swiper-left-dot ul li.wanning-default:hover {
+        width: 150px;
+        height: 150px;
+        background: url("https://p5.ssl.qhimg.com/t01af94820c7a742a81.png")
+          no-repeat center;
+        background-size: 100%;
+      }
+
+      .swiper-left-dot ul > li.zhonggu-default.active {
+        width: 150px;
+        height: 150px;
+        background: url("https://p1.ssl.qhimg.com/t01cbfdfea7804b71b3.png")
+          no-repeat center;
+        background-size: 100%;
+        /*margin-top:20px;*/
+      }
+
+      .swiper-left-dot ul > li.taimiao-default.active {
+        width: 150px;
+        height: 150px;
+        background: url("https://p2.ssl.qhimg.com/t01e1478fc8619ef8e5.png")
+          no-repeat center;
+        background-size: 100%;
+      }
+
+      .swiper-left-dot ul > li.tianan-default.active {
+        width: 150px;
+        height: 150px;
+        background: url("https://p3.ssl.qhimg.com/t01d089f177afa458b4.png")
+          no-repeat center;
+        background-size: 100%;
+      }
+
+      .swiper-left-dot ul > li.zhengyang-default.active {
+        width: 150px;
+        height: 150px;
+        background: url("https://p4.ssl.qhimg.com/t0123e30e93f7ccb6b7.png")
+          no-repeat center;
+        background-size: 100%;
+      }
+
+      .swiper-left-dot ul > li.tiantan-default.active {
+        width: 150px;
+        height: 150px;
+        background: url("https://p4.ssl.qhimg.com/t010df6473bcb6d969c.png")
+          no-repeat center;
+        background-size: 100%;
+      }
+
+      .swiper-left-dot ul > li.xiannong-default.active {
+        width: 150px;
+        height: 150px;
+        background: url("https://p0.ssl.qhimg.com/t018da70e85e2778035.png")
+          no-repeat center;
+        background-size: 100%;
+      }
+
+      .swiper-left-dot ul > li.gugong-default.active {
+        width: 150px;
+        height: 150px;
+        background: url("https://p1.ssl.qhimg.com/t01fc26d2fcf86f898a.png")
+          no-repeat center;
+        background-size: 100%;
+      }
+
+      .swiper-left-dot ul > li.jinshan-default.active {
+        width: 150px;
+        height: 150px;
+        background: url("https://p1.ssl.qhimg.com/t01275f07c09d369fcd.png")
+          no-repeat center;
+        background-size: cover;
+      }
+
+      .swiper-left-dot ul > li.sheji-default.active {
+        width: 150px;
+        height: 150px;
+        background: url("https://p2.ssl.qhimg.com/t01f24f2d8391314bbb.png")
+          no-repeat center;
+        background-size: cover;
+      }
+
+      .swiper-left-dot ul > li.yongding-default.active {
+        width: 150px;
+        height: 150px;
+        background: url("https://p2.ssl.qhimg.com/t013f2fe88789eeb1c4.png")
+          no-repeat center;
+        background-size: 100%;
+      }
+
+      .swiper-left-dot ul > li.wanning-default.active {
+        width: 150px;
+        width: 150px;
+        background: url("https://p5.ssl.qhimg.com/t01af94820c7a742a81.png")
+          no-repeat center;
+        background-size: 100%;
+        margin-bottom: 150px;
+      }
+      /* 左侧中轴线部分结束 */
+      @-webkit-keyframes arrow {
+        0% {
+          opacity: 0;
+        }
+
+        20% {
+          opacity: 1;
+        }
+
+        40% {
+          opacity: 0;
+        }
+
+        60% {
+          opacity: 1;
+        }
+
+        80% {
+          opacity: 0;
+        }
+
+        100% {
+          opacity: 1;
+        }
+      }
+      @keyframes arrow {
+        0% {
+          opacity: 0;
+        }
+
+        20% {
+          opacity: 1;
+        }
+
+        40% {
+          opacity: 0;
+        }
+
+        60% {
+          opacity: 1;
+        }
+
+        80% {
+          opacity: 0;
+        }
+
+        100% {
+          opacity: 1;
+        }
+      }
+
+      .container .btn_wrap {
+        position:fixed;
+        right: 135px;
+        bottom: 25px;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+      }
+
+
+      .container .btn_wrap .webo_btn {
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        background-position: 18px center;
+        font-size: 14px;
+        border-radius: 20px;
+        font-weight: 600;
+        border:0.5px solid #fff;
+        transition: all linear 0.2s;
+        line-height: 40px;
+      }
+
+      .container .btn_wrap .more-btn{
+        font-size: 16px;
+        font-weight: 600;
+        background-color: #fff;
+        color: #e71f19;
+        margin-left: 16px;
+        box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.2);
+        transition: all linear 0.2s;
+      }
+
+      .container .btn_wrap .more-btn:hover {
+          background-color: #e71f19;
+          color: #fff;
+          transition: all linear 0.2s;
+      }
+
+      .container .btn_wrap .more-btn:hover a {
+        color: #fff;
+      }
+
+      .container .btn_wrap  .webo_btn span {
+        display:inline-block;
+        vertical-align: middle;
+      }
+
+      .container .btn_wrap  .webo_btn img{
+        width: 24px;
+        height: 24px;
+        background-size: 100%;
+        display:inline-block;
+        margin-right: 8px;
+        vertical-align: middle;
+      }
+
+      .container .btn_wrap .btn {
+         display:flex;
+         justify-content: center;
+         align-items: center;
+         width:160px;
+         height: 38px;
+         border-radius: 20px;
+         cursor:pointer;
+      }
+      .container .btn_wrap .webo_btn a {
+        color:#fff;
+      }
+      .container .btn_wrap .more-btn a{
+        color: #e71f19;
+        text-decoration: none;
+      }
+      .container .btn_wrap .btn a {
+        display:block;
+      }
+
+     /*顶部设置开始*/
+     .top-seting {
+       position:fixed;
+       right:160px;
+       top:32px;
+     }
+
+     .top-seting-content {
+       display:flex;
+       justify-content: center;
+       align-items: center;
+       font-size: 16px;
+       color:#fff;
+     }
+
+     .top-seting-content .set-btzhi {
+      cursor: pointer;
+     }
+     .top-seting-content .set-wall-icon{
+       display:inline-block;
+      background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAVFBMVEUAAAD///////////////////////////////////////////////////////////////////////////////////////////////////////////8wXzyWAAAAG3RSTlMA4xjJ9GVYvRJJta+PI/uzTjYcCgTr6dvGknClScyMAAAArElEQVQ4y83SORaDMAxFUckjYxgz/v3vMzhOA7ZRkyK3geIdsI9EG6sNMoy2FCiPIq+2wIOdogzlGJ7IgisqqBiWNBwVOWgyUOVAwRBAGTVzHZ5AIWCA02DuhKDFePqLEbjtDnwIFgYwnAQdAvu5/pQJpkucUE/rE9c+CVaNSPfh7V4dgxfwFb/0WPbBnGxEuw9aJLoYiMMSxy0ujLRy8tIKa/9XGiQaKRjoR95JSR/22AkadgAAAABJRU5ErkJggg==) center no-repeat;
+        background-size: cover;
+        display: inline-block;
+        vertical-align: middle;
+        width: 16px;
+        height: 16px;
+        margin-right: 6px;
+     }
+
+     .top-seting-content .line {
+      width: 1px;
+      height: 12px;
+      background: #fff;
+      margin: 0 32px 0 16px;
+     }
+     /*顶部设置结束*/
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="swiper-container">
+        <!-- 背景图开始 -->
+        <div class="swiper-wrapper">
+          <div class="swiper-slide" id="zhonggu_">
+            <!-- 介绍内容开始 -->
+            <div class="swiper-slide-info">
+              <img
+                src="https://p3.ssl.qhimg.com/t01ea1e6ce58358cebd.png"
+                alt=""
+              />
+            </div>
+            <!-- 介绍内容结束 -->
+          </div>
+          <div class="swiper-slide" id="taimiao_">
+            <div class="swiper-slide-info">
+              <img
+                src="https://p4.ssl.qhimg.com/t018a8345a8bf107dc2.png"
+                alt=""
+              />
+            </div>
+          </div>
+          <div class="swiper-slide" id="tianan_">
+            <div class="swiper-slide-info">
+              <img
+                src="https://p1.ssl.qhimg.com/t013a0b976fff29468a.png"
+                alt=""
+              />
+            </div>
+          </div>
+          <div class="swiper-slide" id="zhengyang_">
+            <div class="swiper-slide-info">
+              <img
+                src="https://p4.ssl.qhimg.com/t0179feb17488a24f92.png"
+                alt=""
+              />
+            </div>
+          </div>
+          <div class="swiper-slide" id="tiantan_">
+            <div class="swiper-slide-info">
+              <img
+                src="https://p0.ssl.qhimg.com/t0154d16cf735cebd46.png"
+                alt=""
+              />
+            </div>
+          </div>
+          <div class="swiper-slide" id="xiannong_">
+            <div class="swiper-slide-info">
+              <img
+                src="https://p0.ssl.qhimg.com/t016a4d73552876de36.png"
+                alt=""
+              />
+            </div>
+          </div>
+          <div class="swiper-slide" id="gugong_">
+            <div class="swiper-slide-info">
+              <img
+                src="https://p5.ssl.qhimg.com/t01c85dd578d5bc7fe9.png"
+                alt=""
+              />
+            </div>
+          </div>
+          <div class="swiper-slide" id="jingshan_">
+            <div class="swiper-slide-info">
+              <img
+                src="https://p1.ssl.qhimg.com/t01d29e8b3f67d73d67.png"
+                alt=""
+              />
+            </div>
+          </div>
+          <div class="swiper-slide" id="sheji_">
+            <div class="swiper-slide-info">
+              <img
+                src="https://p1.ssl.qhimg.com/t0173ac693c5e3fda2f.png"
+                alt=""
+              />
+            </div>
+          </div>
+          <div class="swiper-slide" id="yongding_">
+            <div class="swiper-slide-info">
+              <img
+                src="https://p3.ssl.qhimg.com/t0109169ae4f3d912b6.png"
+                alt=""
+              />
+            </div>
+          </div>
+          <div class="swiper-slide" id="wanning_">
+            <div class="swiper-slide-info">
+              <img
+                src="https://p3.ssl.qhimg.com/t01133b1a769d559c4a.png"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+        <!-- 背景图结束 -->
+        <!-- 侧边栏开始 -->
+        <div class="swiper-side">
+          <!-- 滑动条开始 -->
+          <div class="swiper-arrow"></div>
+          <!-- 滑动条结束 -->
+           <!-- 顶部中轴线标题开始 -->
+          <div class="swiper-left-title">
+              <img
+                src="https://p0.ssl.qhimg.com/t01353971b20e8b1d2e.png"
+                alt=""
+              />
+          </div>
+          <!-- 左侧中轴线开始 -->
+          <div class="swiper-left">
+            <div class="swiper-left-dot">
+              <ul class="swiper-pagination-wrap">
+                <li class="zhonggu-default active" id="zhonggu_" data-bg="https://p1.ssl.qhimg.com/t013aea4907ce2936da.jpg" data-md5="2ccf7ed14b8e6adde0f630c3675bd987"></li>
+                <li class="taimiao-default" id="taimiao_" data-bg="https://p5.ssl.qhimg.com/t016433825233a2db19.jpg" data-md5="3feda0ab18436e018f3fa8547f2da794"></li>
+                <li class="tianan-default" id="tianan_" data-bg="https://p0.ssl.qhimg.com/t01677a588c5f5fb17a.jpg" data-md5="28c6e57b6fedf9f6dc0d3f288dbd8b43"></li>
+                <li class="zhengyang-default" id="zhengyang_" data-bg="https://p5.ssl.qhimg.com/t012142101dbb8d684e.jpg" data-md5="04ac7c4ab6c4016d4611ebc0b59698a6"></li>
+                <li class="tiantan-default" id="tiantan_" data-bg="https://p3.ssl.qhimg.com/t014bb81cb17d0fb2a9.jpg" data-md5="74b433086ce344fb78bb62e291d82523"></li>
+                <li class="xiannong-default" id="xiannong_" data-bg="https://p4.ssl.qhimg.com/t0158a888d6ecd74fe4.jpg" data-md5="9cda84e7b68be997ff09568741d80c26"></li>
+                <li class="gugong-default" id="gugong_" data-bg="https://p0.ssl.qhimg.com/t0146a5a893d06a710b.jpg" data-md5="22930f4b1829aeefed4df6128a1bfec7"></li>
+                <li class="jinshan-default" id="jingshan_" data-bg="https://p4.ssl.qhimg.com/t01af6de176251096b9.jpg" data-md5="e2aa05658787d3aba6f0760f73633b8d"></li>
+                <li class="sheji-default" id="sheji_" data-bg="https://p3.ssl.qhimg.com/t0127cdec7f4a64815f.jpg" data-md5="af4366a28f645f6b0da69a736fe9666e"></li>
+                <li class="yongding-default" id="yongding_" data-bg="https://p2.ssl.qhimg.com/t0196391555526c2c2d.jpg" data-md5="e022312c2b7b7d7d43afd9c4fcbe76be"></li>
+                <li class="wanning-default" id="wanning_" data-bg="https://p4.ssl.qhimg.com/t019afbffebb8fd2513.jpg" data-md5="16c0eca367c10bfffcec60577d3eec64"></li>
+              </ul>
+            </div>
+            <!-- 顶部中轴线标题结束 -->
+          </div>
+          <!-- 左侧中州线结束 -->
+        </div>
+        <!-- 侧边栏结束 -->
+      </div>
+      <!-- 顶部设为壁纸/设置/结束/ESC开始 -->
+      <div class="top-seting">
+          <ul class="top-seting-content">
+             <li class="set-btzhi"><i class="set-wall-icon"></i>设为壁纸</li>
+             <li class="line"></li>
+          </ul>
+      </div>
+      <!-- 顶部设为壁纸/设置/结束/ESC结束 -->
+      <!-- 底部固定按钮开始 -->
+      <div class="btn_wrap">
+          <div class="webo_btn btn" id="webo_btn"><a href="" target="_blank"><img src="https://p5.ssl.qhimg.com/t01b127134178835be6.png" alt=""><span>微博一键分享</span></a></div>
+          <div class="more-btn btn" id="more-btn"><a target="_blank" href="https://baike.so.com/doc/6590413-6804190.html">了解更多</a></div>
+      </div>
+      <!-- 底部固定按钮结束 -->
+    </div>
+    <script src="https://lib.baomitu.com/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://apps.bdimg.com/libs/jquery-lazyload/1.9.5/jquery.lazyload.js"></script>
+    <script>
+
+      $(function () {
+        // 首次加载时打点
+        var swiperSlides = $(".swiper-wrapper .swiper-slide")
+        var url = "";
+        url = window.location.href; // 获取完整的url
+        var firstShowDot = $("#zhonggu_")[0].id
+        var setBizhiBtn = $(".set-btzhi"); // 设置壁纸
+        var weboBtn = $(".webo_btn");  // 获取微博分享按钮
+        var moreBtn = $(".more-btn");  // 获取了解更多按钮
+        
+        console.log(firstShowDot);
+        if (url.indexOf("?") !== -1) {
+              var regin = queryString(url);
+              if (regin.isSafe == 0) {
+                // 浏览器
+                var llq = firstShowDot+"llq";
+                sendGif("1279.7078.gif", { " _referer": llq });
+              } else {
+
+                var ws = firstShowDot+"ws";
+                // 卫士
+                $(".top-seting").css("display","none");
+                sendGif("1279.7078.gif", { " _referer": ws });
+              }
+        }
+        // 首次加载时打点结束
+
+        // 首次进页面时,给微博一键分享链接赋初始值开始
+        var activeImg = {
+              shareTargetUrl: "https://s.weibo.com/weibo?q=%23%E8%B7%9F%E7%9D%80%E5%B1%8F%E4%BF%9D%E6%B8%B8%E4%B8%AD%E5%9B%BD%23&from=default",
+              shareTitle:"#跟着屏保游中国#我在360画报云逛北京中轴线，领略文化之美！",
+              img: $(".zhonggu-default.active").attr("data-bg")
+          }
+          var targetUrl = activeImg.shareTargetUrl ? 'http://service.weibo.com/share/share.php?title=' +
+          encodeURIComponent(activeImg.shareTitle) +
+          '&url=' +
+          encodeURIComponent(activeImg.shareTargetUrl) +
+          '&pic=' +
+          encodeURIComponent(activeImg.img)
+        : 'http://service.weibo.com/share/share.php?title=' +
+          encodeURIComponent(activeImg.shareTitle) +
+          '&pic=' +
+          encodeURIComponent(activeImg.img)
+          weboBtn.find("a").attr("href",targetUrl);
+          weboBtn.find("a").attr("data-type","zhonggu_"); 
+          moreBtn.find("a").attr("data-type","zhonggu_");
+          setBizhiBtn.attr({"data-img":$(".zhonggu-default.active").attr("data-bg"),"data-md5":"2ccf7ed14b8e6adde0f630c3675bd987","data-type":firstShowDot});
+          // 首次进页面时,给微博一键分享链接赋初始值结束
+        
+        var windowH = $(window).height(); // 获取文档可视区域的高度
+        var windowW = $(window).width(); // 获取文档可视区域的宽度
+        var swiperWrapperH = $(".swiper-wrapper"); // 获取swiper-wrapper的可视区域的高度
+        var swiperLeft = $(".swiper-left"); // 获取左侧中轴线高度
+        var swiperLeftTop = swiperLeft.offset().top;
+        var swiperSide = $(".swiper-side");
+        var swiperLeftUl = $(".swiper-left-dot ul");
+        var swiperLeftLi = $(".swiper-left-dot ul li")
+        swiperWrapperH.css("height", windowH + "px");
+        swiperLeft.css({"height":windowH - swiperLeftTop+ "px","paddingRight":windowW-swiperLeft.offset().left});
+        swiperSide.css("height", windowH + "px");
+       
+
+        // 初次点击微博分享按钮
+        // 初次进入页面点击微博分享按钮结束
+
+        // 点击列表
+        swiperLeftUl.on("click", "li", function () {
+          var index = $(this).index();
+          var md5 = $(this).attr("data-md5");
+          var bg = $(this).attr("data-bg");
+          // console.log($(this).attr("data-bg"));
+          if (url.indexOf("?") !== -1) {
+                var regin = queryString(url);
+                if (regin.isSafe == 0) {
+                  console.log("来源浏览器");
+                  // 浏览器
+                  var llq = this.id+"llq";
+                  sendGif("1279.4679.gif", { " _referer": llq });
+                  sendGif("1279.7078.gif", { " _referer": llq });
+                } else {
+                  console.log("来源卫士");
+                  var ws = this.id+"ws";
+                  console.log(ws);
+                  sendGif("1279.4679.gif", { " _referer": ws });
+                  sendGif("1279.7078.gif", { " _referer": ws });
+                }
+          }
+  
+          $(this).addClass("active").siblings().removeClass("active");
+          $(".swiper-wrapper")
+            .find(".swiper-slide")
+            .eq(index)
+            .show()
+            .siblings()
+            .hide();
+
+          var activeImg = {
+              shareTargetUrl: "https://s.weibo.com/weibo?q=%23%E8%B7%9F%E7%9D%80%E5%B1%8F%E4%BF%9D%E6%B8%B8%E4%B8%AD%E5%9B%BD%23&from=default",
+              shareTitle:"#跟着屏保游中国#我在360画报云逛北京中轴线，领略文化之美！",
+              img: $(this).attr("data-bg")
+          }
+          var targetUrl = activeImg.shareTargetUrl ? 'http://service.weibo.com/share/share.php?title=' +
+          encodeURIComponent(activeImg.shareTitle) +
+          '&url=' +
+          encodeURIComponent(activeImg.shareTargetUrl) +
+          '&pic=' +
+          encodeURIComponent(activeImg.img)
+        : 'http://service.weibo.com/share/share.php?title=' +
+          encodeURIComponent(activeImg.shareTitle) +
+          '&pic=' +
+          encodeURIComponent(activeImg.img)
+          weboBtn.find("a").attr("href",targetUrl);  
+          weboBtn.find("a").attr("data-type",this.id);
+          moreBtn.find("a").attr("data-type",this.id);
+          setBizhiBtn.attr({"data-img":bg,"data-md5": md5});
+          setBizhiBtn.attr("data-type",this.id);
+        });
+
+        // 点击微博一键分享打点
+        weboBtn.click(function() {
+           btnDot(weboBtn,"1279.8367.gif");
+        })
+        // 点击了解更多打点
+        moreBtn.click(function() {
+           btnDot(moreBtn,"1279.7064.gif");
+        })
+
+        function btnDot(elem,gif) {
+          var type = elem.find("a").attr("data-type");
+          if (url.indexOf("?") !== -1) {
+              var regin = queryString(url);
+              if (regin.isSafe == 0) {
+                // 浏览器
+                var llq = type+"llq";
+                sendGif(gif, { " _referer": llq });
+              } else {
+                // 卫士
+                var ws = type+"ws";
+                sendGif(gif, { " _referer": ws });
+              }
+           }
+        }
+
+        
+
+        // 设置壁纸操作
+        setBizhiBtn.off().on('click',function() {
+          var md5 = $(this).attr("data-md5");
+          var img = $(this).attr("data-img");
+          var type = $(this).attr("data-type");
+          console.log(img,md5);
+          console.log("设置壁纸");
+          var llq = type+"llq";
+          sendGif("1279.1521.gif", { " _referer": llq });
+          if(img) {
+            window.parent.postMessage({
+             _img: img,
+             _md5: md5
+            }, '*');
+          }
+          
+        })
+
+        // 获取url的params参数
+        function queryString(str) {
+          let params = str.split("?")[1];
+          let param = params.split("&");
+          let obj = {}; // 用一个对象存储目标值
+          for (let i = 0; i < param.length; i++) {
+            // 循环遍历截取出来的param数组
+            let paramsA = param[i].split("=");
+            let key = paramsA[0];
+            let value = paramsA[1];
+            obj[key] = value;
+          }
+          return obj;
+        }
+
+        $(".swiper-slide").lazyload({
+          effect: "fadeIn",
+          event: "mouseover",
+        });
+
+         $(window).resize(function() {
+           swiperWrapperH.css("height", windowH + "px");
+         })
+      });
+
+     
+
+      // 打点
+      function sendGif(filename, data) {
+        var files = [];
+        if (Object.prototype.toString.call(filename) == "[object String]") {
+          files.push(filename);
+        } else if (
+          Object.prototype.toString.call(filename) == "[object Array]"
+        ) {
+          files = filename;
+        } else {
+          return;
+        }
+        files.forEach(function (item) {
+          var params = "";
+          if (data && typeof data == "object") {
+            for (var k in data) {
+              params += k + "=" + data[k] + "&";
+            }
+          }
+          try {
+            new Image().src =
+              "//dd.browser.360.cn/static/a/" +
+              item +
+              "?" +
+              params +
+              "mid=" +
+              external.GetMID(external.GetSID(window)) +
+              "&t=" +
+              Date.now() +
+              Math.random().toString().replace("0.", "").substr(0, 10);
+          } catch (e) {}
+        });
+      }
+    </script>
+  </body>
+</html>

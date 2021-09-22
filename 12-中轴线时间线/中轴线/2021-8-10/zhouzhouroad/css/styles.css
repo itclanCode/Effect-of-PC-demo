@@ -1,0 +1,436 @@
+@charset "utf-8";
+* {
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  list-style-type: none;
+}
+
+img {
+  vertical-align: top;
+  border: 0;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-container {
+  position: relative;
+}
+
+.swiper-wrapper {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.swiper-wrapper .swiper-slide {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-wrapper .swiper-slide:nth-of-type(1) {
+  background: url("../images/钟鼓楼.jpg") no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+.swiper-wrapper .swiper-slide:nth-of-type(2) {
+  background: url("../images/太庙.jpg") no-repeat;
+  background-size: cover;
+  background-position: center center;
+  display: none;
+}
+
+.swiper-wrapper .swiper-slide:nth-of-type(3) {
+  background: url("../images/天安门.jpg") no-repeat;
+  background-size: cover;
+  background-position: center center;
+  display: none;
+}
+
+.swiper-wrapper .swiper-slide:nth-of-type(4) {
+  background: url("../images/正阳门箭楼.jpg") no-repeat;
+  background-size: cover;
+  background-position: center center;
+  display: none;
+}
+
+.swiper-wrapper .swiper-slide:nth-of-type(5) {
+  background: url("../images/天坛.jpg") no-repeat;
+  background-size: cover;
+  background-position: center center;
+  display: none;
+}
+
+.swiper-wrapper .swiper-slide:nth-of-type(6) {
+  background: url("../images/先农坛.jpg") no-repeat;
+  background-size: cover;
+  background-position: center center;
+  display: none;
+}
+
+.swiper-wrapper .swiper-slide:nth-of-type(7) {
+  background: url("../images/故宫.jpg") no-repeat;
+  background-size: cover;
+  background-position: center center;
+  display: none;
+}
+
+.swiper-wrapper .swiper-slide:nth-of-type(8) {
+  background: url("../images/景山.jpg") no-repeat;
+  background-size: cover;
+  background-position: center center;
+  display: none;
+}
+
+.swiper-wrapper .swiper-slide:nth-of-type(9) {
+  background: url("../images/社稷坛.jpg") no-repeat;
+  background-size: cover;
+  background-position: center center;
+  display: none;
+}
+
+.swiper-wrapper .swiper-slide:nth-of-type(10) {
+  background: url("../images/永定门.jpg") no-repeat;
+  background-size: cover;
+  background-position: center center;
+  display: none;
+}
+
+.swiper-wrapper .swiper-slide:nth-of-type(11) {
+  background: url("../images/万宁桥.jpg") no-repeat;
+  background-size: cover;
+  background-position: center center;
+  display: none;
+}
+
+.swiper-wrapper .swiper-slide .swiper-slide-info {
+  width: 100%;
+  height: 100%;
+  background: url("../images/底图2.png") no-repeat bottom;
+  background-size: cover;
+}
+
+.swiper-wrapper .swiper-slide .swiper-slide-info img {
+  background-size: cover;
+  width: 739px;
+  height: 83px;
+  position: absolute;
+  right: 35px;
+  bottom: 40px;
+}
+
+/* 背景图结束 */
+.swiper-side {
+  display: flex;
+  width: 380px;
+  background: url("../images/底图.png") no-repeat left;
+  background-size: cover;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+/* 左侧滑动条开始 */
+.swiper-arrow {
+  width: 15px;
+  height: 117px;
+  position: absolute;
+  top: 50%;
+  left: 25px;
+  margin-top: -58.5px;
+  background: url("../images/滑动条@3x.png") no-repeat center center;
+  background-size: cover;
+  z-index: 2;
+  animation: arrow ease-in 3s;
+  -webkit-animation: arrow ease-in 3s;
+  animation-fill-mode: forwards;
+}
+/* 左侧滑动条结束 */
+/* 左侧中轴线部分开始 */
+.swiper-left {
+  width: 133.5px;
+  position: absolute;
+  left: 40px;
+  top: 37px;
+  text-align: center;
+  overflow-y: hidden;
+}
+
+.swiper-left:after {
+  content: "";
+  display: block;
+  width: 6px;
+  height: 100%;
+  background: #fced98;
+  position: absolute;
+  left: 65px;
+  top: 24px;
+  z-index: 1;
+}
+.swiper-left-title {
+  position: relative;
+  z-index: 3;
+}
+
+.swiper-left-title img {
+  width: 133.5px;
+  height: 34.5px;
+  display: inline-block;
+}
+
+.swiper-left-dot {
+  position: relative;
+  z-index: 2;
+}
+
+.swiper-left-dot ul {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.swiper-left-dot .swiper-pagination-wrap {
+  position: relative;
+}
+
+.swiper-left-dot ul li {
+  margin: 0px 0 20px 0;
+}
+
+.swiper-left-dot ul li.zhonggu-default {
+  width: 83px;
+  height: 58.5px;
+  background: url("../images/钟鼓楼-default@3x.png") no-repeat center;
+  background-size: cover;
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+
+.swiper-left-dot ul li.taimiao-default {
+  width: 74.5px;
+  height: 59.5px;
+  background: url("../images/太庙-default@3x.png") no-repeat center;
+  background-size: cover;
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+
+.swiper-left-dot ul li.tianan-default {
+  width: 114px;
+  height: 65px;
+  background: url("../images/天安门-default@3x.png") no-repeat center;
+  background-size: cover;
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+
+.swiper-left-dot ul li.zhengyang-default {
+  width: 93px;
+  height: 59.5px;
+  background: url("../images/正阳门-default@3x.png") no-repeat center;
+  background-size: cover;
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+
+.swiper-left-dot ul li.tiantan-default {
+  width: 94.5px;
+  height: 93px;
+  background: url("../images/天坛-default@3x.png") no-repeat center;
+  background-size: cover;
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+
+.swiper-left-dot ul li.xiannong-default {
+  width: 76px;
+  height: 54.5px;
+  background: url("../images/先农坛-default@3x.png") no-repeat center;
+  background-size: cover;
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+
+.swiper-left-dot ul li.gugong-default {
+  width: 97.5px;
+  height: 86.5px;
+  background: url("../images/故宫-default@3x.png") no-repeat center;
+  background-size: cover;
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+
+.swiper-left-dot ul li.jinshan-default {
+  width: 117px;
+  height: 87px;
+  background: url("../images/景山公园-default@3x.png") no-repeat center;
+  background-size: cover;
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+
+.swiper-left-dot ul li.sheji-default {
+  width: 68.5px;
+  height: 58.5px;
+  background: url("../images/社稷坛-default@3x.png") no-repeat center;
+  background-size: cover;
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+
+.swiper-left-dot ul li.yongding-default {
+  width: 91px;
+  height: 85.5px;
+  background: url("../images/永定门-default@3x.png") no-repeat center;
+  background-size: cover;
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+
+.swiper-left-dot ul li.wanning-default {
+  width: 92.5px;
+  height: 79.5px;
+  background: url("../images/万宁桥-default@3x.png") no-repeat center;
+  background-size: cover;
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+
+.swiper-left-dot ul > li.zhonggu-default.active {
+  width: 102px;
+  height: 84px;
+  background: url("../images/钟鼓楼-active@3x.png") no-repeat center;
+  background-size: cover;
+}
+
+.swiper-left-dot ul > li.taimiao-default.active {
+  width: 99px;
+  height: 84px;
+  background: url("../images/太庙-active@3x.png") no-repeat center;
+  background-size: cover;
+}
+
+.swiper-left-dot ul > li.tianan-default.active {
+  width: 128px;
+  height: 81px;
+  background: url("../images/天安门-active@3x.png") no-repeat center;
+  background-size: cover;
+}
+
+.swiper-left-dot ul > li.zhengyang-default.active {
+  width: 118px;
+  height: 85px;
+  background: url("../images/正阳门-active@3x.png") no-repeat center;
+  background-size: cover;
+}
+
+.swiper-left-dot ul > li.tiantan-default.active {
+  width: 86.5px;
+  height: 86.5px;
+  background: url("../images/天坛-active@3x.png") no-repeat center;
+  background-size: cover;
+}
+
+.swiper-left-dot ul > li.xiannong-default.active {
+  width: 100px;
+  height: 79.5px;
+  background: url("../images/先农坛-active@3x.png") no-repeat center;
+  background-size: cover;
+}
+
+.swiper-left-dot ul > li.gugong-default.active {
+  width: 133px;
+  height: 113px;
+  background: url("../images/故宫-active@3x.png") no-repeat center;
+  background-size: cover;
+}
+
+.swiper-left-dot ul > li.jinshan-default.active {
+  width: 102px;
+  height: 83px;
+  background: url("../images/景山公圆-active@3X.png") no-repeat center;
+  background-size: cover;
+}
+
+.swiper-left-dot ul > li.sheji-default.active {
+  width: 92.5px;
+  height: 83.5px;
+  background: url("../images/社稷坛-active@3x.png") no-repeat center;
+  background-size: cover;
+}
+
+.swiper-left-dot ul > li.yongding-default.active {
+  width: 128.5px;
+  height: 124px;
+  background: url("../images/永定门-active@3x.png") no-repeat center;
+  background-size: cover;
+}
+
+.swiper-left-dot ul > li.wanning-default.active {
+  width: 128.5px;
+  height: 124px;
+  background: url("../images/万宁桥-active@3x.png") no-repeat center;
+  background-size: cover;
+}
+/* 左侧中轴线部分结束 */
+@-webkit-keyframes arrow {
+  0% {
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  40% {
+    opacity: 0;
+  }
+
+  60% {
+    opacity: 1;
+  }
+
+  80% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes arrow {
+  0% {
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  40% {
+    opacity: 0;
+  }
+
+  60% {
+    opacity: 1;
+  }
+
+  80% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}

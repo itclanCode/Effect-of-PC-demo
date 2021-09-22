@@ -1,0 +1,1194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>北京中轴线</title>
+    <style>
+      @charset "utf-8";
+      * {
+        padding: 0;
+        margin: 0;
+      }
+
+      li {
+        list-style-type: none;
+      }
+
+      img {
+        vertical-align: top;
+        border: 0;
+      }
+
+      ol,
+      ul {
+        list-style: none;
+      }
+
+      .container {
+        width: 100%;
+        height: 100%;
+      }
+
+      .swiper-container {
+        position: relative;
+      }
+
+      .swiper-wrapper {
+        width: 100%;
+        position: relative;
+      }
+
+      .swiper-wrapper .swiper-slide {
+        width: 100%;
+        height: 100%;
+        display:none;
+      }
+
+      .swiper-wrapper .swiper-slide:nth-of-type(1) {
+        background: url("https://p1.ssl.qhimg.com/t013aea4907ce2936da.jpg")
+          no-repeat;
+        background-size: cover;
+        background-position: center center;
+        display:block;
+      }
+
+      .swiper-wrapper .swiper-slide:nth-of-type(2) {
+        background: url("https://p5.ssl.qhimg.com/t016433825233a2db19.jpg")
+          no-repeat;
+        background-size: cover;
+        background-position: center center;
+      }
+
+      .swiper-wrapper .swiper-slide:nth-of-type(3) {
+        background: url("https://p0.ssl.qhimg.com/t01677a588c5f5fb17a.jpg")
+          no-repeat;
+        background-size: cover;
+        background-position: center center;
+      }
+
+      .swiper-wrapper .swiper-slide:nth-of-type(4) {
+        background: url("https://p5.ssl.qhimg.com/t012142101dbb8d684e.jpg")
+          no-repeat;
+        background-size: cover;
+        background-position: center center;
+      }
+
+      .swiper-wrapper .swiper-slide:nth-of-type(5) {
+        background: url("https://p3.ssl.qhimg.com/t014bb81cb17d0fb2a9.jpg")
+          no-repeat;
+        background-size: cover;
+        background-position: center center;
+      }
+
+      .swiper-wrapper .swiper-slide:nth-of-type(6) {
+        background: url("https://p4.ssl.qhimg.com/t0158a888d6ecd74fe4.jpg")
+          no-repeat;
+        background-size: cover;
+        background-position: center center;
+      }
+
+      .swiper-wrapper .swiper-slide:nth-of-type(7) {
+        background: url("https://p0.ssl.qhimg.com/t0146a5a893d06a710b.jpg")
+          no-repeat;
+        background-size: cover;
+        background-position: center center;
+      }
+
+      .swiper-wrapper .swiper-slide:nth-of-type(8) {
+        background: url("https://p4.ssl.qhimg.com/t01af6de176251096b9.jpg")
+          no-repeat;
+        background-size: cover;
+        background-position: center center;
+      }
+
+      .swiper-wrapper .swiper-slide:nth-of-type(9) {
+        background: url("https://p3.ssl.qhimg.com/t0127cdec7f4a64815f.jpg")
+          no-repeat;
+        background-size: cover;
+        background-position: center center;
+      }
+
+      .swiper-wrapper .swiper-slide:nth-of-type(10) {
+        background: url("https://p2.ssl.qhimg.com/t0196391555526c2c2d.jpg")
+          no-repeat;
+        background-size: cover;
+        background-position: center center;
+      }
+
+      .swiper-wrapper .swiper-slide:nth-of-type(11) {
+        background: url("https://p4.ssl.qhimg.com/t019afbffebb8fd2513.jpg")
+          no-repeat;
+        background-size: cover;
+        background-position: center center;
+      }
+
+      .swiper-wrapper .swiper-slide .swiper-slide-info {
+        width: 100%;
+        height: 100%;
+        background: url("https://p2.ssl.qhimg.com/t01e98758c695731b70.png")
+          no-repeat bottom;
+        background-size: cover;
+      }
+
+      .swiper-wrapper .swiper-slide .swiper-slide-info img {
+        background-size: cover;
+        width: 739px;
+        height: 83px;
+        position: absolute;
+        right: 35px;
+        bottom: 40px;
+      }
+
+      /* 背景图结束 */
+      .swiper-side {
+        display: flex;
+        width: 280px;
+        background: url("https://p3.ssl.qhimg.com/t011a62248bf36e9f03.png")
+          no-repeat left;
+        background-size: cover;
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+      /* 左侧滑动条开始 */
+      .swiper-arrow {
+        width: 15px;
+        height: 117px;
+        position: absolute;
+        top: 50%;
+        left: 25px;
+        margin-top: -58.5px;
+        background: url("https://p0.ssl.qhimg.com/t012b3107f7e4a10714.png")
+          no-repeat center center;
+        background-size: cover;
+        z-index: 2;
+        animation: arrow ease-in 3s;
+        -webkit-animation: arrow ease-in 3s;
+        animation-fill-mode: forwards;
+      }
+      /* 左侧滑动条结束 */
+      /* 左侧中轴线部分开始 */
+      .swiper-left {
+        width: 133.5px;
+        position: absolute;
+        left: 40px;
+        top: 37px;
+        text-align: center;
+        overflow: hidden;
+      }
+
+      .swiper-left:after {
+        content: "";
+        display: block;
+        width: 6px;
+        height: 100%;
+        background: #fced98;
+        position: absolute;
+        left: 65px;
+        top: 24px;
+        z-index: 1;
+      }
+      .swiper-left-title {
+        position: relative;
+        z-index: 3;
+      }
+
+      .swiper-left-title img {
+        width: 133.5px;
+        height: 34.5px;
+        display: inline-block;
+      }
+
+      .swiper-left-dot {
+        position: relative;
+        z-index: 2;
+        overflow:hidden;
+      }
+
+      .swiper-left-dot ul {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .swiper-left-dot .swiper-pagination-wrap {
+        position: relative;
+        overflow:hidden;
+      }
+
+      .swiper-left-dot ul li {
+        margin: 0px 0 20px 0;
+      }
+
+      .swiper-left-dot ul li.zhonggu-default {
+        width: 83px;
+        height: 65.5px;
+        background: url("https://p2.ssl.qhimg.com/t0126b051a970a886e5.png")
+          no-repeat center;
+        background-size: cover;
+        transition: all 0.5s ease;
+        cursor: pointer;
+      }
+
+      .swiper-left-dot ul li.zhonggu-default:hover {
+        width: 83px;
+        height: 65.5px;
+        transform: scale(1.2);
+        background: url("https://p3.ssl.qhimg.com/t0130c25a4ba2368405.png")
+          no-repeat center;
+        background-size: cover;
+        transition: all 0.5s ease;
+      }
+
+      .swiper-left-dot ul li.taimiao-default {
+        width: 74.5px;
+        height: 59.5px;
+        background: url("https://p0.ssl.qhimg.com/t0117bea663cb8a3d7c.png")
+          no-repeat center;
+        background-size: cover;
+        transition: all 0.5s ease;
+        cursor: pointer;
+      }
+
+      .swiper-left-dot ul li.taimiao-default:hover {
+        width: 74.5px;
+        height: 59.5px;
+        transform: scale(1.5);
+        background: url("https://p2.ssl.qhimg.com/t01cf0c800579b93cca.png")
+          no-repeat center;
+        background-size: cover;
+        transition: all 0.5s ease;
+      }
+
+      .swiper-left-dot ul li.tianan-default {
+        width: 114px;
+        height: 65px;
+        background: url("https://p3.ssl.qhimg.com/t01ee75d5865d3c9af5.png")
+          no-repeat center;
+        background-size: cover;
+        transition: all 0.5s ease;
+        cursor: pointer;
+      }
+
+      .swiper-left-dot ul li.tianan-default:hover {
+        width: 114px;
+        height: 65px;
+        transform:scale(1.2);
+        background: url("https://p2.ssl.qhimg.com/t019ae2e344c01515ef.png")
+          no-repeat center;
+        background-size: cover;
+        transition: all 0.5s ease;
+      }
+
+      .swiper-left-dot ul li.zhengyang-default {
+        width: 93px;
+        height: 59.5px;
+        background: url("https://p3.ssl.qhimg.com/t012c8faee4c822ec15.png")
+          no-repeat center;
+        background-size: cover;
+        transition: all 0.5s ease;
+        cursor: pointer;
+      }
+
+      .swiper-left-dot ul li.zhengyang-default:hover {
+        width: 93px;
+        height: 59.5px;
+        transform:scale(1.2);
+        background: url("https://p2.ssl.qhimg.com/t01d30214eaea34ae71.png")
+          no-repeat center;
+        background-size: cover;
+        transition: all 0.5s ease;
+      }
+
+      .swiper-left-dot ul li.tiantan-default {
+        width: 83.5px;
+        height: 93px;
+        background: url("https://p4.ssl.qhimg.com/t01b9fe9a5520a3078d.png")
+          no-repeat center;
+        background-size: 100%;
+        transition: all 0.5s ease;
+        cursor: pointer;
+      }
+
+      .swiper-left-dot ul li.tiantan-default:hover {
+        width: 86.5px;
+        height: 93px;
+        transform: scale(1.2);
+        background: url("https://p0.ssl.qhimg.com/t0150c345c9bf308480.png")
+          no-repeat center;
+        background-size: 100%;
+        transition: all 0.5s ease;
+      }
+
+      .swiper-left-dot ul li.xiannong-default {
+        width: 76px;
+        height: 54.5px;
+        background: url("https://p2.ssl.qhimg.com/t01cd950cb099382c04.png")
+          no-repeat center;
+        background-size: cover;
+        transition: all 0.5s ease;
+        cursor: pointer;
+      }
+
+      .swiper-left-dot ul li.xiannong-default:hover {
+        width: 76px;
+        height: 54.5px;
+        transform:scale(1.5);
+        background: url("https://p1.ssl.qhimg.com/t012e861047503ae51c.png")
+          no-repeat center;
+        background-size: cover;
+        transition: all 0.5s ease;
+      }
+
+      .swiper-left-dot ul li.gugong-default {
+        width: 90.5px;
+        height: 80.5px;
+        background: url("https://p0.ssl.qhimg.com/t018ae378e0c58f1679.png")
+          no-repeat center;
+        background-size: 100%;
+        transition: all 0.5s ease;
+        cursor: pointer;
+      }
+
+      .swiper-left-dot ul li.gugong-default:hover {
+        width: 90.5px;
+        height: 80.5px;
+        transform: scale(1.2);
+        background: url("https://p0.ssl.qhimg.com/t012589ecd938b46c8b.png")
+          no-repeat center;
+        background-size: cover;
+        transition: all 0.5s ease;
+      }
+
+      .swiper-left-dot ul li.jinshan-default {
+        width: 90px;
+        height: 70px;
+        background: url("https://p5.ssl.qhimg.com/t01ad272b06513d785a.png")
+          no-repeat center;
+        background-size: 100%;
+        transition: all 0.5s ease;
+        cursor: pointer;
+      }
+
+      .swiper-left-dot ul li.jinshan-default:hover {
+        width: 90px;
+        height: 70px;
+        transform: scale(1.5);
+        background: url("https://p2.ssl.qhimg.com/t0129c88f00180f3465.png")
+          no-repeat center;
+        background-size: cover;
+        transition: all 0.5s ease;
+      }
+
+      .swiper-left-dot ul li.sheji-default {
+        width: 68.5px;
+        height: 58.5px;
+        background: url("https://p2.ssl.qhimg.com/t01a002725e310214bc.png")
+          no-repeat center;
+        background-size: cover;
+        transition: all 0.5s ease;
+        cursor: pointer;
+      }
+
+      .swiper-left-dot ul li.sheji-default:hover {
+        width: 68.5px;
+        height: 58.5px;
+        transform: scale(1.5);
+        background: url("https://p3.ssl.qhimg.com/t014ec72313ed01db1a.png")
+          no-repeat center;
+        background-size: cover;
+        transition: all 0.5s ease;
+      }
+
+      .swiper-left-dot ul li.yongding-default {
+        width: 73px;
+        height: 87.5px;
+        background: url("https://p0.ssl.qhimg.com/t012cd1cbea975ccfbe.png")
+          no-repeat center;
+        background-size: 100%;
+        transition: all 0.5s ease;
+        cursor: pointer;
+      }
+
+      .swiper-left-dot ul li.yongding-default:hover {
+        width: 73px;
+        height: 87.5px;
+        transform: scale(1.2);
+        background: url("https://p5.ssl.qhimg.com/t0131f5e88cbfc9fbc4.png")
+          no-repeat center;
+        background-size:100%;
+        transition: all 0.5s ease;
+      }
+
+      .swiper-left-dot ul li.wanning-default {
+        width: 76.5px;
+        height: 79.5px;
+        background: url("https://p0.ssl.qhimg.com/t01dd9e58125ad98d2c.png")
+          no-repeat center;
+        background-size: 100%;
+        transition: all 0.5s ease;
+        cursor: pointer;
+      }
+
+      .swiper-left-dot ul li.wanning-default:hover {
+        width: 76.5px;
+        height: 79.5px;
+        transform:scale(1.2);
+        background: url("https://p1.ssl.qhimg.com/t0108a46790298d4ac4.png")
+          no-repeat center;
+        background-size: 100%;
+        transition: all 0.5s ease;
+      }
+
+      .swiper-left-dot ul > li.zhonggu-default.active {
+        width: 83px;
+        height: 65.5px;
+         transform:scale(1.2);
+        background: url("https://p3.ssl.qhimg.com/t0130c25a4ba2368405.png")
+          no-repeat center;
+        background-size: 100%;
+      }
+
+      .swiper-left-dot ul > li.taimiao-default.active {
+        width: 74.5px;
+        height: 59.5px;
+        transform:scale(1.5);
+        background: url("https://p2.ssl.qhimg.com/t01cf0c800579b93cca.png")
+          no-repeat center;
+        background-size: cover;
+      }
+
+      .swiper-left-dot ul > li.tianan-default.active {
+        width: 114px;
+        height: 65px;
+        transform:scale(1.2);
+        background: url("https://p2.ssl.qhimg.com/t019ae2e344c01515ef.png")
+          no-repeat center;
+        background-size: 100%;
+      }
+
+      .swiper-left-dot ul > li.zhengyang-default.active {
+        width: 93px;
+        height: 59.5px;
+        transform:scale(1.2);
+        background: url("https://p2.ssl.qhimg.com/t01d30214eaea34ae71.png")
+          no-repeat center;
+        background-size: 100%;
+      }
+
+      .swiper-left-dot ul > li.tiantan-default.active {
+        width: 83.5px;
+        height: 93px;
+        transform:scale(1.2);
+        background: url("https://p0.ssl.qhimg.com/t0150c345c9bf308480.png")
+          no-repeat center;
+        background-size: 100%;
+      }
+
+      .swiper-left-dot ul > li.xiannong-default.active {
+        width: 76px;
+        height: 54.5px;
+        transform:scale(1.5);
+        background: url("https://p1.ssl.qhimg.com/t012e861047503ae51c.png")
+          no-repeat center;
+        background-size: 100%;
+      }
+
+      .swiper-left-dot ul > li.gugong-default.active {
+        width: 90.5px;
+        height: 80.5px;
+        transform: scale(1.2);
+        background: url("https://p0.ssl.qhimg.com/t012589ecd938b46c8b.png")
+          no-repeat center;
+        background-size: cover;
+      }
+
+      .swiper-left-dot ul > li.jinshan-default.active {
+        width: 90px;
+        height: 70px;
+        transform:scale(1.5);
+        background: url("https://p2.ssl.qhimg.com/t0129c88f00180f3465.png")
+          no-repeat center;
+        background-size: cover;
+      }
+
+      .swiper-left-dot ul > li.sheji-default.active {
+        width: 68.5px;
+        height: 58.5px;
+        transform: scale(1.5);
+        background: url("https://p3.ssl.qhimg.com/t014ec72313ed01db1a.png")
+          no-repeat center;
+        background-size: cover;
+      }
+
+      .swiper-left-dot ul > li.yongding-default.active {
+        width: 73px;
+        height: 87.5px;
+        transform: scale(1.2);
+        background: url("https://p5.ssl.qhimg.com/t0131f5e88cbfc9fbc4.png")
+          no-repeat center;
+        background-size: 100%;
+      }
+
+      .swiper-left-dot ul > li.wanning-default.active {
+        width: 76.5px;
+        height: 79.5px;
+        transform:scale(1.2);
+        background: url("https://p1.ssl.qhimg.com/t0108a46790298d4ac4.png")
+          no-repeat center;
+        background-size: 100%;
+      }
+      /* 左侧中轴线部分结束 */
+      @-webkit-keyframes arrow {
+        0% {
+          opacity: 0;
+        }
+
+        20% {
+          opacity: 1;
+        }
+
+        40% {
+          opacity: 0;
+        }
+
+        60% {
+          opacity: 1;
+        }
+
+        80% {
+          opacity: 0;
+        }
+
+        100% {
+          opacity: 1;
+        }
+      }
+      @keyframes arrow {
+        0% {
+          opacity: 0;
+        }
+
+        20% {
+          opacity: 1;
+        }
+
+        40% {
+          opacity: 0;
+        }
+
+        60% {
+          opacity: 1;
+        }
+
+        80% {
+          opacity: 0;
+        }
+
+        100% {
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="swiper-container">
+        <!-- 背景图开始 -->
+        <div class="swiper-wrapper">
+          <div class="swiper-slide" id="zhonggu_">
+            <!-- 介绍内容开始 -->
+            <div class="swiper-slide-info">
+              <img
+                src="https://p3.ssl.qhimg.com/t01ea1e6ce58358cebd.png"
+                alt=""
+              />
+            </div>
+            <!-- 介绍内容结束 -->
+          </div>
+          <div class="swiper-slide" id="taimiao_">
+            <div class="swiper-slide-info">
+              <img
+                src="https://p4.ssl.qhimg.com/t018a8345a8bf107dc2.png"
+                alt=""
+              />
+            </div>
+          </div>
+          <div class="swiper-slide" id="tianan_">
+            <div class="swiper-slide-info">
+              <img
+                src="https://p1.ssl.qhimg.com/t013a0b976fff29468a.png"
+                alt=""
+              />
+            </div>
+          </div>
+          <div class="swiper-slide" id="zhengyang_">
+            <div class="swiper-slide-info">
+              <img
+                src="https://p4.ssl.qhimg.com/t0179feb17488a24f92.png"
+                alt=""
+              />
+            </div>
+          </div>
+          <div class="swiper-slide" id="tiantan_">
+            <div class="swiper-slide-info">
+              <img
+                src="https://p0.ssl.qhimg.com/t0154d16cf735cebd46.png"
+                alt=""
+              />
+            </div>
+          </div>
+          <div class="swiper-slide" id="xiannong_">
+            <div class="swiper-slide-info">
+              <img
+                src="https://p0.ssl.qhimg.com/t016a4d73552876de36.png"
+                alt=""
+              />
+            </div>
+          </div>
+          <div class="swiper-slide" id="gugong_">
+            <div class="swiper-slide-info">
+              <img
+                src="https://p5.ssl.qhimg.com/t01c85dd578d5bc7fe9.png"
+                alt=""
+              />
+            </div>
+          </div>
+          <div class="swiper-slide" id="jingshan_">
+            <div class="swiper-slide-info">
+              <img
+                src="https://p1.ssl.qhimg.com/t01d29e8b3f67d73d67.png"
+                alt=""
+              />
+            </div>
+          </div>
+          <div class="swiper-slide" id="sheji_">
+            <div class="swiper-slide-info">
+              <img
+                src="https://p1.ssl.qhimg.com/t0173ac693c5e3fda2f.png"
+                alt=""
+              />
+            </div>
+          </div>
+          <div class="swiper-slide" id="yongding_">
+            <div class="swiper-slide-info">
+              <img
+                src="https://p3.ssl.qhimg.com/t0109169ae4f3d912b6.png"
+                alt=""
+              />
+            </div>
+          </div>
+          <div class="swiper-slide" id="wanning_">
+            <div class="swiper-slide-info">
+              <img
+                src="https://p3.ssl.qhimg.com/t01133b1a769d559c4a.png"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+        <!-- 背景图结束 -->
+        <!-- 侧边栏开始 -->
+        <div class="swiper-side">
+          <!-- 滑动条开始 -->
+          <div class="swiper-arrow"></div>
+          <!-- 滑动条结束 -->
+          <!-- 左侧中轴线开始 -->
+          <div class="swiper-left">
+            <!-- 顶部中轴线标题开始 -->
+            <div class="swiper-left-title">
+              <img
+                src="https://p0.ssl.qhimg.com/t01353971b20e8b1d2e.png"
+                alt=""
+              />
+            </div>
+            <div class="swiper-left-dot">
+              <ul class="swiper-pagination-wrap">
+                <li class="zhonggu-default active" id="zhonggu_"></li>
+                <li class="taimiao-default" id="taimiao_"></li>
+                <li class="tianan-default" id="tianan_"></li>
+                <li class="zhengyang-default" id="zhengyang_"></li>
+                <li class="tiantan-default" id="tiantan_"></li>
+                <li class="xiannong-default" id="xiannong_"></li>
+                <li class="gugong-default" id="gugong_"></li>
+                <li class="jinshan-default" id="jingshan_"></li>
+                <li class="sheji-default" id="sheji_"></li>
+                <li class="yongding-default" id="yongding_"></li>
+                <li class="wanning-default" id="wanning_"></li>
+              </ul>
+            </div>
+            <!-- 顶部中轴线标题结束 -->
+          </div>
+          <!-- 左侧中州线结束 -->
+        </div>
+        <!-- 侧边栏结束 -->
+      </div>
+    </div>
+    <script src="https://lib.baomitu.com/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://apps.bdimg.com/libs/jquery-lazyload/1.9.5/jquery.lazyload.js"></script>
+    <script>
+      // JQ鼠标滚轮开始
+      (function (factory) {
+        if (typeof define === "function" && define.amd) {
+          // AMD. Register as an anonymous module.
+          define(["jquery"], factory);
+        } else if (typeof exports === "object") {
+          // Node/CommonJS style for Browserify
+          module.exports = factory;
+        } else {
+          // Browser globals
+          factory(jQuery);
+        }
+      })(function ($) {
+        var toFix = [
+            "wheel",
+            "mousewheel",
+            "DOMMouseScroll",
+            "MozMousePixelScroll",
+          ],
+          toBind =
+            "onwheel" in window.document || window.document.documentMode >= 9
+              ? ["wheel"]
+              : ["mousewheel", "DomMouseScroll", "MozMousePixelScroll"],
+          slice = Array.prototype.slice,
+          nullLowestDeltaTimeout,
+          lowestDelta;
+
+        if ($.event.fixHooks) {
+          for (var i = toFix.length; i; ) {
+            $.event.fixHooks[toFix[--i]] = $.event.mouseHooks;
+          }
+        }
+
+        var special = ($.event.special.mousewheel = {
+          version: "3.1.12",
+
+          setup: function () {
+            if (this.addEventListener) {
+              for (var i = toBind.length; i; ) {
+                this.addEventListener(toBind[--i], handler, false);
+              }
+            } else {
+              this.onmousewheel = handler;
+            }
+
+            // Store the line height and page height for this particular element
+            $.data(this, "mousewheel-line-height", special.getLineHeight(this));
+            $.data(this, "mousewheel-page-height", special.getPageHeight(this));
+          },
+
+          teardown: function () {
+            if (this.removeEventListener) {
+              for (var i = toBind.length; i; ) {
+                this.removeEventListener(toBind[--i], handler, false);
+              }
+            } else {
+              this.onmousewheel = null;
+            }
+
+            // Clean up the data we added to the element
+            $.removeData(this, "mousewheel-line-height");
+            $.removeData(this, "mousewheel-page-height");
+          },
+
+          getLineHeight: function (elem) {
+            var $elem = $(elem),
+              $parent =
+                $elem["offsetParent" in $.fn ? "offsetParent" : "parent"]();
+            if (!$parent.length) {
+              $parent = $("body");
+            }
+            return (
+              parseInt($parent.css("fontSize"), 10) ||
+              parseInt($elem.css("fontSize"), 10) ||
+              16
+            );
+          },
+
+          getPageHeight: function (elem) {
+            return $(elem).height();
+          },
+
+          settings: {
+            adjustOldDeltas: true, // see shouldAdjustOldDeltas() below
+            normalizeOffset: true, // calls getBoundingClientRect for each event
+          },
+        });
+
+        $.fn.extend({
+          mousewheel: function (fn) {
+            return fn ? this.on("mousewheel", fn) : this.trigger("mousewheel");
+          },
+
+          unmousewheel: function (fn) {
+            return this.off("mousewheel", fn);
+          },
+        });
+
+        function handler(event) {
+          var orgEvent = event || window.event,
+            args = slice.call(arguments, 1),
+            delta = 0,
+            deltaX = 0,
+            deltaY = 0,
+            absDelta = 0;
+          event = $.event.fix(orgEvent);
+          event.type = "mousewheel";
+
+          // Old school scrollwheel delta
+          if ("detail" in orgEvent) {
+            deltaY = orgEvent.detail * -1;
+          }
+          if ("wheelDelta" in orgEvent) {
+            deltaY = orgEvent.wheelDelta;
+          }
+          if ("wheelDeltaY" in orgEvent) {
+            deltaY = orgEvent.wheelDeltaY;
+          }
+          if ("wheelDeltaX" in orgEvent) {
+            deltaX = orgEvent.wheelDeltaX * -1;
+          }
+
+          // Firefox < 17 horizontal scrolling related to DOMMouseScroll event
+          if (
+            "axis" in orgEvent &&
+            orgEvent.axis === orgEvent.HORIZONTAL_AXIS
+          ) {
+            deltaX = deltaY * -1;
+            deltaY = 0;
+          }
+
+          // Set delta to be deltaY or deltaX if deltaY is 0 for backwards compatabilitiy
+          delta = deltaY === 0 ? deltaX : deltaY;
+
+          // New school wheel delta (wheel event)
+          if ("deltaY" in orgEvent) {
+            deltaY = orgEvent.deltaY * -1;
+            delta = deltaY;
+          }
+          if ("deltaX" in orgEvent) {
+            deltaX = orgEvent.deltaX;
+            if (deltaY === 0) {
+              delta = deltaX * -1;
+            }
+          }
+
+          // No change actually happened, no reason to go any further
+          if (deltaY === 0 && deltaX === 0) {
+            return;
+          }
+
+          // Need to convert lines and pages to pixels if we aren't already in pixels
+          // There are three delta modes:
+          //   * deltaMode 0 is by pixels, nothing to do
+          //   * deltaMode 1 is by lines
+          //   * deltaMode 2 is by pages
+          if (orgEvent.deltaMode === 1) {
+            var lineHeight = $.data(this, "mousewheel-line-height");
+            delta *= lineHeight;
+            deltaY *= lineHeight;
+            deltaX *= lineHeight;
+          } else if (orgEvent.deltaMode === 2) {
+            var pageHeight = $.data(this, "mousewheel-page-height");
+            delta *= pageHeight;
+            deltaY *= pageHeight;
+            deltaX *= pageHeight;
+          }
+
+          // Store lowest absolute delta to normalize the delta values
+          absDelta = Math.max(Math.abs(deltaY), Math.abs(deltaX));
+
+          if (!lowestDelta || absDelta < lowestDelta) {
+            lowestDelta = absDelta;
+
+            // Adjust older deltas if necessary
+            if (shouldAdjustOldDeltas(orgEvent, absDelta)) {
+              lowestDelta /= 40;
+            }
+          }
+
+          // Adjust older deltas if necessary
+          if (shouldAdjustOldDeltas(orgEvent, absDelta)) {
+            // Divide all the things by 40!
+            delta /= 40;
+            deltaX /= 40;
+            deltaY /= 40;
+          }
+
+          // Get a whole, normalized value for the deltas
+          delta = Math[delta >= 1 ? "floor" : "ceil"](delta / lowestDelta);
+          deltaX = Math[deltaX >= 1 ? "floor" : "ceil"](deltaX / lowestDelta);
+          deltaY = Math[deltaY >= 1 ? "floor" : "ceil"](deltaY / lowestDelta);
+
+          // Normalise offsetX and offsetY properties
+          if (special.settings.normalizeOffset && this.getBoundingClientRect) {
+            var boundingRect = this.getBoundingClientRect();
+            event.offsetX = event.clientX - boundingRect.left;
+            event.offsetY = event.clientY - boundingRect.top;
+          }
+
+          // Add information to the event object
+          event.deltaX = deltaX;
+          event.deltaY = deltaY;
+          event.deltaFactor = lowestDelta;
+
+          // Go ahead and set deltaMode to 0 since we converted to pixels
+          // Although this is a little odd since we overwrite the deltaX/Y
+          // properties with normalized deltas.
+          event.deltaMode = 0;
+
+          // Add event and delta to the front of the arguments
+          args.unshift(event, delta, deltaX, deltaY);
+
+          // Clearout lowestDelta after sometime to better
+          // handle multiple device types that give different
+          // a different lowestDelta
+          // Ex: trackpad = 3 and mouse wheel = 120
+          if (nullLowestDeltaTimeout) {
+            window.clearTimeout(nullLowestDeltaTimeout);
+          }
+          nullLowestDeltaTimeout = window.setTimeout(nullLowestDelta, 200);
+
+          return ($.event.dispatch || $.event.handle).apply(this, args);
+        }
+
+        function nullLowestDelta() {
+          lowestDelta = null;
+        }
+
+        function shouldAdjustOldDeltas(orgEvent, absDelta) {
+          return (
+            special.settings.adjustOldDeltas &&
+            orgEvent.type === "mousewheel" &&
+            absDelta % 120 === 0
+          );
+        }
+      });
+      // jQ鼠标滚轮结束
+
+      $(function () {
+        // 首次加载时打点
+        var swiperSlides = $(".swiper-wrapper .swiper-slide")
+        var url = "";
+        url = window.location.href; // 获取完整的url
+        
+        // 首次加载时打点结束
+        var windowH = $(window).height(); // 获取文档可视区域的高度
+        var swiperWrapperH = $(".swiper-wrapper"); // 获取swiper-wrapper的可视区域的高度
+        var swiperLeft = $(".swiper-left"); // 获取左侧中轴线高度
+        var swiperSide = $(".swiper-side");
+        var swiperLeftUl = $(".swiper-left-dot ul");
+        var swiperLeftLi = $(".swiper-left-dot ul li");
+        var Time = new Date(); // 当滚轮滚得特别快时，会错乱，那么要控制滚轮之间的时间差，获取当前页面的时间
+        var _index = 0; // 定义一个索引
+        swiperWrapperH.css("height", windowH + "px");
+        swiperLeft.css("height", windowH - swiperLeft.offset().top+ "px");
+        swiperSide.css("height", windowH + "px");
+        // 点击列表
+        swiperLeftUl.on("click", "li", function () {
+          var index = $(this).index();
+          var id = $(this).attr("id");
+          swiperSlides.each(function(i) {
+            switch(i) {
+              case index:
+                  if (url.indexOf("?") !== -1) {
+                    var regin = queryString(url);
+                    if (regin.isSafe == 0) {
+                      // 浏览器
+                      var llq = this.id+"llq";
+                      sendGif("1279.7078.gif", { " _referer": llq });
+                    } else {
+                      var ws = this.id+"ws";
+                      // 卫士
+                      sendGif("1279.7078.gif", { " _referer": ws });
+                    }
+                  }
+               break;
+              default:
+               return; 
+            }
+          })
+          if (url.indexOf("?") !== -1) {
+            var regin = queryString(url);
+            if (regin.isSafe == 0) {
+              // 浏览器
+              var llq = id+"llq";
+              sendGif("1279.4679.gif", { " _referer": llq });
+            } else {
+              var ws = id+"ws";
+              // 卫士
+              sendGif("1279.4679.gif", { " _referer": ws });
+            }
+          }
+          $(this).addClass("active").siblings().removeClass("active");
+          $(".swiper-wrapper")
+            .find(".swiper-slide")
+            .eq(index)
+            .show()
+            .siblings()
+            .hide();
+          switch (index) {
+            case 0:
+              swiperLeftUl.animate({ top:"0px" });
+              break;
+            case 1:
+              swiperLeftUl.animate({ top: "0px" });
+              break;
+            case 2:
+              swiperLeftUl.animate({ top: "0px" });
+              break;
+            case 3:
+              swiperLeftUl.animate({ top: "0px" });
+              break;
+            case 4:
+              swiperLeftUl.animate({ top: "0px" });
+              break;
+            case 5:
+              swiperLeftUl.animate({ top: "-155px" });
+              break;
+            case 6:
+              swiperLeftUl.animate({ top: "-240px" });
+              break;
+            case 7:
+              swiperLeftUl.animate({ top: "-505px" });
+              break;
+            case 8:
+              swiperLeftUl.animate({ top: "-500px" });
+              break;
+            case 9:
+              swiperLeftUl.animate({ top:  "-500px" });
+              break;
+            case 10:
+              swiperLeftUl.animate({ top:  "-505px" });
+              break;
+            default:
+              return;
+          }
+        });
+
+        $(document).mousewheel(function (event, delta, deltaX, deltaY) {
+          if (new Date() - Time > 600) {
+            // 当滚动的时候，上下滚动的时间差大于600毫秒的时候，执行下面的动作，新的时间减去前面一个滚动的时间
+            Time = new Date(); //时间等于新的时间
+            delta == -1 ? _index++ : _index--;
+            // 到末尾的时候
+            if (_index > swiperLeftLi.length - 1) {
+              _index = 0;
+            }
+            if (_index < 0) {
+              _index = swiperLeftLi.length - 1;
+            }
+            swiperLeftUl
+              .find("li")
+              .eq(_index)
+              .addClass("active")
+              .siblings()
+              .removeClass("active");
+            $(".swiper-wrapper")
+              .find(".swiper-slide")
+              .eq(_index)
+              .show()
+              .siblings()
+              .hide();
+
+             switch (_index) {
+              case 0:
+                swiperLeftUl.animate({ top: "0px" });
+                break;
+              case 1:
+                swiperLeftUl.animate({ top:  "0px" });
+                break;
+              case 2:
+                swiperLeftUl.animate({ top:  "0px" });
+                break;
+              case 3:
+                swiperLeftUl.animate({ top: "0px" });
+                break;
+              case 4:
+                swiperLeftUl.animate({ top: "0px" });
+                break;
+              case 5:
+                swiperLeftUl.animate({ top:" -155px" });
+                break;
+              case 6:
+                swiperLeftUl.animate({ top: "-240px" });
+                break;
+              case 7:
+                swiperLeftUl.animate({ top:  "-505px" });
+                break;
+              case 8:
+                swiperLeftUl.animate({ top:  "-500px" });
+                break;
+              case 9:
+                swiperLeftUl.animate({ top:  "-500px" });
+                break;
+              case 10:
+                swiperLeftUl.animate({ top:  "-505px" });
+                break;
+              default:
+                return;
+             }  
+          }
+         
+        });
+
+        // 获取url的params参数
+        function queryString(str) {
+          let params = str.split("?")[1];
+          let param = params.split("&");
+          let obj = {}; // 用一个对象存储目标值
+          for (let i = 0; i < param.length; i++) {
+            // 循环遍历截取出来的param数组
+            let paramsA = param[i].split("=");
+            let key = paramsA[0];
+            let value = paramsA[1];
+            obj[key] = value;
+          }
+          return obj;
+        }
+
+        $(".swiper-slide").lazyload({
+          effect: "fadeIn",
+          event: "mouseover",
+        });
+      });
+
+      // 打点
+      function sendGif(filename, data) {
+        var files = [];
+        if (Object.prototype.toString.call(filename) == "[object String]") {
+          files.push(filename);
+        } else if (
+          Object.prototype.toString.call(filename) == "[object Array]"
+        ) {
+          files = filename;
+        } else {
+          return;
+        }
+        files.forEach(function (item) {
+          var params = "";
+          if (data && typeof data == "object") {
+            for (var k in data) {
+              params += k + "=" + data[k] + "&";
+            }
+          }
+          try {
+            new Image().src =
+              "//dd.browser.360.cn/static/a/" +
+              item +
+              "?" +
+              params +
+              "mid=" +
+              external.GetMID(external.GetSID(window)) +
+              "&t=" +
+              Date.now() +
+              Math.random().toString().replace("0.", "").substr(0, 10);
+          } catch (e) {}
+        });
+      }
+    </script>
+  </body>
+</html>
