@@ -1,0 +1,76 @@
+[
+    {
+        "header": {
+            "wrap_bg":"https://browser5.qhimg.com/t01910d98d07b9e184a.png",
+            "prize_btn":"https://browser5.qhimg.com/t012306e250c37dd490.png",
+            "active_time":"2021年7月5日-2021年8月5日"
+        },
+
+        "prize": {
+            "title_bg": "https://browser5.qhimg.com/t0170cedf2c160b840f.png",
+            "title_text": "完成任务的奖品",
+            "prize_lists": [
+                {
+                  "prize_img":"https://browser5.qhimg.com/t0160b6046b4493acbd.png",  
+                  "title":"50元京东卡"
+                },
+                {
+                    "prize_img":"https://browser5.qhimg.com/t01945914256f7a2a2a.png",  
+                    "title":"马克杯礼盒"
+                },
+                {
+                    "prize_img":"https://browser5.qhimg.com/t01fc5aa0cb676fac69.png",  
+                    "title":"招财猫碗筷套装"
+                },
+                {
+                    "prize_img":"https://browser5.qhimg.com/t011d7cd2301f8d21b0.png",  
+                    "title":"360扫地机器人 c50"
+                },
+                {
+                    "prize_img":"https://browser5.qhimg.com/t01e6465e9ac42b4c3f.png",  
+                    "title":"360蓝牙耳机 Popbuds SE"
+                }
+
+            ]
+        },
+        "pictorial": {
+            "title_bg": "https://browser5.qhimg.com/t0170cedf2c160b840f.png",
+            "title_text":"什么是360画报？",
+            "first_title":"360画报",
+            "first_desc": "当电脑进入待机休眠状态，自动启用屏保程序，用户在画报中可将360屏保美图设置为桌面壁纸",
+            "pict_img":"https://p5.ssl.qhimg.com/t017de0fda40c3c1c7f.png",
+            "second_title":"开启方式",
+            "second_desc": "打开360安全浏览器PC端-设置选项页-实验室-360画报-开启360画报开关即可"
+        },
+        "activerules": {
+            "rule_tab_con": [
+                {
+                    "rule_title": "1、各渠道打开规则:",
+                    "rule_1":"（1）每个ID只可参与一次,提交一次链接,重复内容参与提交视为只有先者有效,每位用户只可获得一份奖品",
+                    "rule_2":"（2）分享发布时,请参考上述各渠道图片,文字进行发布,否则判定为无效发布"
+                },
+                {
+                    "rule_title": "2、抽奖说明:",
+                    "rule_1": "抽奖规则：按要求发布到3个以及以上平台,即可参与抽奖",
+                    "rule_2": "抽奖方式：填写上方领取奖品表单,确认提交参与",
+                    "rule_3": "抽奖说明：最终中奖用户需按规则要求发满3个平台及以上,否则中奖视为无效"
+                },
+                {
+                    "rule_title": "3、活动时间:",
+                    "rule_1": "2021年7月5日00:00:00-2021年8月5日 23:59:59"
+                }
+             ],
+        
+            "tip_tab_con": {
+                "tip_text":[
+                    "1、本活动奖品将在内容认定合格后，在活动结束后的15个工作日内按照提交的先后顺序一次发货，请耐心等待",
+                    "2、请准确填写表内所有信息，因填写信息错误造成的延误或丢失，相关奖励不予补发",
+                    "3、若遭遇不可抗力导致不能及时发货，将会在360粉丝团公众号内进行通知",
+                    "4、招财猫碗筷与马克杯套装共限量2000个，若奖品库存不足,将自动更换为其他等值奖品",
+                    "5、在法律许可范围内，360粉丝团拥有本活动最终解释权"
+                ]
+            }
+        } 
+    }
+    
+]

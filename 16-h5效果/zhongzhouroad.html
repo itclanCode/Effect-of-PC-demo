@@ -1,0 +1,1235 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>北京中轴线</title>
+    <style>
+      @charset "utf-8";
+      * {
+        padding: 0;
+        margin: 0;
+      }
+
+      body {
+        background:#333;
+        height: 100%;
+      }
+
+      body,html{
+        overflow:hidden;
+        height: 100%;
+      }
+
+      li {
+        list-style-type: none;
+      }
+
+      img {
+        vertical-align: top;
+        border: 0;
+      }
+
+      ol,
+      ul {
+        list-style: none;
+      }
+
+      .container {
+        width: 100%;
+        height: 100%;
+      }
+
+      .swiper-container {
+        position: relative;
+        overflow-y: hidden;
+        height:100%;
+      }
+
+      .swiper-wrapper {
+        width: 100%;
+        position: relative;
+        height: 100%;
+      }
+
+      .swiper-wrapper .swiper-slide {
+        width: 100%;
+        height: 100%;
+        display:none;
+      }
+
+      .swiper-wrapper .swiper-slide:nth-of-type(1) {
+        background: url("https://browser5.qhimg.com/t01ba49b6f734a3f9e5.jpg")
+          no-repeat;
+        background-size: cover;
+        background-position: center center;
+        display:block;
+      }
+
+      .swiper-wrapper .swiper-slide:nth-of-type(2) {
+        background: url("https://browser5.qhimg.com/t01e92fd2a5b5564446.jpg")
+          no-repeat;  
+        background-size: cover;
+        background-position: center center;
+      }
+
+      .swiper-wrapper .swiper-slide:nth-of-type(3) {
+        background: url("https://browser5.qhimg.com/t0109f3f4ef80597c14.jpg")
+          no-repeat;
+        background-size: cover;
+        background-position: center center;
+      }
+
+      .swiper-wrapper .swiper-slide:nth-of-type(4) {
+        background: url("https://browser5.qhimg.com/t0128a52ea45a78d603.jpg")
+          no-repeat;
+        background-size: cover;
+        background-position: center center;
+      }
+
+      .swiper-wrapper .swiper-slide:nth-of-type(5) {
+        background: url("https://browser5.qhimg.com/t01d803a1e7465b40db.jpg")
+          no-repeat;
+        background-size: cover;
+        background-position: center center;
+      }
+
+      .swiper-wrapper .swiper-slide:nth-of-type(6) {
+        background: url("https://browser5.qhimg.com/t0176de6b2f4fe99263.jpg")
+          no-repeat;
+        background-size: cover;
+        background-position: center center;
+      }
+
+      .swiper-wrapper .swiper-slide:nth-of-type(7) {
+        background: url("https://browser5.qhimg.com/t01cf393d7d3ac02d67.jpg")
+          no-repeat;
+        background-size: cover;
+        background-position: center center;
+      }
+
+      .swiper-wrapper .swiper-slide:nth-of-type(8) {
+        background: url("https://browser5.qhimg.com/t016e592f0ed4ae9e14.jpg")
+          no-repeat;
+        background-size: cover;
+        background-position: center center;
+      }
+
+      .swiper-wrapper .swiper-slide:nth-of-type(9) {
+        background: url("https://browser5.qhimg.com/t01e73bb0c0895287a4.jpg")
+          no-repeat;
+        background-size: cover;
+        background-position: center center;
+      }
+
+      .swiper-wrapper .swiper-slide:nth-of-type(10) {
+        background: url("https://browser5.qhimg.com/t014c68b0df741f290f.jpg")
+          no-repeat;
+        background-size: cover;
+        background-position: center center;
+      }
+
+      .swiper-wrapper .swiper-slide:nth-of-type(11) {
+        background: url("https://browser5.qhimg.com/t018b70a504a432a472.jpg")
+          no-repeat;
+        background-size: cover;
+        background-position: center center;
+      }
+
+      .swiper-wrapper .swiper-slide .swiper-slide-info {
+        width: 100%;
+        height: 100%;
+        background: url("https://browser5.qhimg.com/t0142145ca3f1799519.png")
+          no-repeat bottom;
+        background-size: 100%;
+      }
+
+      .swiper-wrapper .swiper-slide .swiper-slide-info span.swiper-slide-info-zhonggu {
+        width: 100%;
+        display:block;
+        background:url("https://browser5.qhimg.com/t01a4a0d237c23ce42f.png") no-repeat right center;
+        background-size: 79%;
+        height:166px;
+        position: absolute;
+        right: 41px;
+        bottom: 50px;
+      }
+
+      .swiper-wrapper .swiper-slide .swiper-slide-info span.swiper-slide-info-taimiao {
+        width: 100%;
+        display:block;
+        background:url("https://browser5.qhimg.com/t013f894e47a4d6ea0f.png") no-repeat right center;
+        background-size: 79%;
+        height:166px;
+        position: absolute;
+        right: 41px;
+        bottom: 50px;
+      }
+
+      .swiper-wrapper .swiper-slide .swiper-slide-info span.swiper-slide-info-tianan {
+        width: 100%;
+        display:block;
+        background:url("https://browser5.qhimg.com/t01ebdceca6bcb61772.png") no-repeat right center;
+        background-size: 79%;
+        height:166px;
+        position: absolute;
+        right: 41px;
+        bottom: 50px;
+      }
+
+      .swiper-wrapper .swiper-slide .swiper-slide-info span.swiper-slide-info-zhengyang {
+        width: 100%;
+        display:block;
+        background:url("https://browser5.qhimg.com/t019c61cefd35894ced.png") no-repeat right center;
+        background-size: 79%;
+        height:166px;
+        position: absolute;
+        right: 41px;
+        bottom: 50px;
+      }
+
+      .swiper-wrapper .swiper-slide .swiper-slide-info span.swiper-slide-info-tiantan {
+        width: 100%;
+        display:block;
+        background:url("https://browser5.qhimg.com/t010ef55fb5f24ea3c1.png") no-repeat right center;
+        background-size: 79%;
+        height:166px;
+        position: absolute;
+        right: 41px;
+        bottom: 50px;
+      }
+
+      .swiper-wrapper .swiper-slide .swiper-slide-info span.swiper-slide-info-xiannong {
+        width: 100%;
+        display:block;
+        background:url("https://browser5.qhimg.com/t01d7d370b7f40984a7.png") no-repeat right center;
+        background-size: 79%;
+        height:166px;
+        position: absolute;
+        right: 41px;
+        bottom: 50px;
+      }
+
+      .swiper-wrapper .swiper-slide .swiper-slide-info span.swiper-slide-info-gugong {
+        width: 100%;
+        display:block;
+        background:url("https://browser5.qhimg.com/t0162730841ebb5a489.png") no-repeat right center;
+        background-size: 79%;
+        height:166px;
+        position: absolute;
+        right: 41px;
+        bottom: 50px;
+      }
+
+       .swiper-wrapper .swiper-slide .swiper-slide-info span.swiper-slide-info-jinshan {
+        width: 100%;
+        display:block;
+        background:url("https://browser5.qhimg.com/t015cf2a490e7dbaf44.png") no-repeat right center;
+        background-size: 79%;
+        height:166px;
+        position: absolute;
+        right: 41px;
+        bottom: 50px;
+      }
+
+       .swiper-wrapper .swiper-slide .swiper-slide-info span.swiper-slide-info-sheji {
+        width: 100%;
+        display:block;
+        background:url("https://browser5.qhimg.com/t010e41d13565b4c3da.png") no-repeat right center;
+        background-size: 79%;
+        height:166px;
+        position: absolute;
+        right: 41px;
+        bottom: 50px;
+      }
+
+       .swiper-wrapper .swiper-slide .swiper-slide-info span.swiper-slide-info-yongding {
+        width: 100%;
+        display:block;
+        background:url("https://browser5.qhimg.com/t015cd9633b6fffd8d4.png") no-repeat right center;
+        background-size: 79%;
+        height:166px;
+        position: absolute;
+        right: 41px;
+        bottom: 50px;
+      }
+
+       .swiper-wrapper .swiper-slide .swiper-slide-info span.swiper-slide-info-wanning {
+        width: 100%;
+        display:block;
+        background:url("https://browser5.qhimg.com/t01315fa41e63aeb52d.png") no-repeat right center;
+        background-size: 79%;
+        height:166px;
+        position: absolute;
+        right: 41px;
+        bottom: 50px;
+      }
+
+      /* 右下角图片结束*/
+      .swiper-side-out{
+        height: 100%;
+        overflow: auto;
+        width: 100%;
+        position: relative;
+        top: 62px;
+      }
+
+      .swiper-side-out::-webkit-scrollbar {
+        display: none;
+      }
+
+
+      /* 背景图结束 */
+      .swiper-side {
+        display: flex;
+        width: 100%;
+        background: url("https://browser5.qhimg.com/t01c16f2e824faf89d1.png")
+          no-repeat left;
+        background-size: cover;
+        position: absolute;
+        left: 0;
+        top: 0;
+        overflow: hidden;
+        height: 100%;
+      }
+      /* 左侧滑动条开始 */
+      .swiper-arrow {
+        width: 15px;
+        height: 117px;
+        position: absolute;
+        top: 50%;
+        left: 20px;
+        margin-top: -58.5px;
+        background: url("https://browser5.qhimg.com/t01dd9deba1374c5d2c.png")
+          no-repeat center center;
+        background-size: cover;
+        z-index: 2;
+        animation: arrow ease-in 3s;
+        -webkit-animation: arrow ease-in 3s;
+        animation-fill-mode: forwards;
+      }
+      /* 左侧滑动条结束 */
+      /* 左侧中轴线部分开始 */
+      .swiper-left {
+     /*   width: 133.5px;*/
+        position: absolute;
+        left: 51px;
+        top: 5px;
+        text-align: center;
+        overflow-y: auto;
+        overflow-x:hidden;
+      }
+
+      .swiper-left::-webkit-scrollbar {
+        display: none;
+      }
+
+       .swiper-side:after {
+        content: "";
+        display: block;
+        width: 6px;
+        height: 100%;
+        background: #fced98;
+        position: absolute;
+        left: 125px;
+        top: 60px;
+        z-index: 1;
+      }
+      .swiper-left-title {
+        position: fixed;
+        z-index: 3;
+        left: 67px;
+        top:37px;
+      }
+
+      .swiper-left-title img {
+        width: 133.5px;
+        height: 34.5px;
+        display: inline-block;
+      }
+
+      .swiper-left-dot {
+        position: relative;
+        z-index: 2;
+        overflow:hidden;
+      }
+
+      .swiper-left-dot ul {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .swiper-left-dot .swiper-pagination-wrap {
+        position: relative;
+      }
+
+      .swiper-left-dot ul li.zhonggu-default {
+        width: 150px;
+        height: 150px;
+        background: url("https://browser5.qhimg.com/t012237b6d85f54eb2c.png")
+          no-repeat center;
+        background-size: cover;
+        cursor: pointer;
+        margin-top:-20px;
+      }
+
+      .swiper-left-dot ul li.zhonggu-default:hover {
+        width: 150px;
+        height: 150px;
+        background: url("https://browser5.qhimg.com/t01f9d92be7a640153c.png")
+          no-repeat center;
+        background-size: cover;
+      }
+
+      .swiper-left-dot ul li.taimiao-default {
+        width: 150px;
+        height: 150px;
+        background: url("https://browser5.qhimg.com/t01964f16c2e6765a78.png")
+          no-repeat center;
+        background-size: 100%;
+        cursor: pointer;
+        margin-top:-60px;
+      }
+
+      .swiper-left-dot ul li.taimiao-default:hover {
+        width: 150px;
+        height: 150px;
+        background: url("https://browser5.qhimg.com/t0159331af08ab64707.png")
+          no-repeat center;
+        background-size: cover;
+      }
+
+      .swiper-left-dot ul li.tianan-default {
+        width: 150px;
+        height: 150px;
+        background: url("https://browser5.qhimg.com/t015838e879b0819004.png")
+          no-repeat center;
+        background-size: cover;
+        cursor: pointer;
+        margin-top:-60px;
+      }
+
+      .swiper-left-dot ul li.tianan-default:hover {
+        width: 150px;
+        height: 150px;
+        background: url("https://browser5.qhimg.com/t0165a80785635bc869.png")
+          no-repeat center;
+        background-size: cover;
+      }
+
+      .swiper-left-dot ul li.zhengyang-default {
+        width: 150px;
+        height: 150px;
+        background: url("https://browser5.qhimg.com/t0101355338f37000dd.png")
+          no-repeat center;
+        background-size: cover;
+        cursor: pointer;
+        margin-top:-60px;
+      }
+
+      .swiper-left-dot ul li.zhengyang-default:hover {
+        width: 150px;
+        height: 150px;
+        background: url("https://browser5.qhimg.com/t01e624e6e7a962eb9d.png")
+          no-repeat center;
+        background-size: cover;
+      }
+
+      .swiper-left-dot ul li.tiantan-default {
+        width: 150px;
+        height: 150px;
+        background: url("https://browser5.qhimg.com/t01b0403f91a5cadd66.png")
+          no-repeat center;
+        background-size: 100%;
+        cursor: pointer;
+        margin-top:-60px;
+      }
+
+      .swiper-left-dot ul li.tiantan-default:hover {
+        width: 150px;
+        height: 150px;
+        background: url("https://browser5.qhimg.com/t01fef58542e5042a51.png")
+          no-repeat center;
+        background-size: 100%;
+      }
+
+      .swiper-left-dot ul li.xiannong-default {
+        width: 150px;
+        height: 150px;
+        background: url("https://browser5.qhimg.com/t01dff0b3f9960b9deb.png")
+          no-repeat center;
+        background-size: 100%;
+        cursor: pointer;
+        margin-top:-60px;
+      }
+
+      .swiper-left-dot ul li.xiannong-default:hover {
+        width: 150px;
+        height: 150px;
+        background: url("https://browser5.qhimg.com/t010c10f15ec188a381.png")
+          no-repeat center;
+        background-size: cover;
+      }
+
+      .swiper-left-dot ul li.gugong-default {
+        width:150px;
+        height: 150px;
+        background: url("https://browser5.qhimg.com/t0141b38f2c066809fa.png")
+          no-repeat center;
+        background-size: 100%;
+        cursor: pointer;
+        margin-top:-60px;
+      }
+
+      .swiper-left-dot ul li.gugong-default:hover {
+        width: 150px;
+        height: 150px;
+        background: url("https://browser5.qhimg.com/t012f67087d1e807bc8.png")
+          no-repeat center;
+        background-size: cover;
+      }
+
+      .swiper-left-dot ul li.jinshan-default {
+        width: 150px;
+        height: 150px;
+        background: url("https://browser5.qhimg.com/t01c01235fcd789ff1d.png")
+          no-repeat center;
+        background-size: 100%;
+        cursor: pointer;
+        margin-top:-60px;
+      }
+
+      .swiper-left-dot ul li.jinshan-default:hover {
+        width: 150px;
+        height: 150px;
+        background: url("https://browser5.qhimg.com/t0165c4799cf74e9d31.png")
+          no-repeat center;
+        background-size: 100%;
+      }
+
+      .swiper-left-dot ul li.sheji-default {
+        width: 150px;
+        height: 150px;
+        background: url("https://browser5.qhimg.com/t017d0b169343313fc6.png")
+          no-repeat center;
+        background-size: 100%;
+        cursor: pointer;
+        margin-top:-60px;
+      }
+
+      .swiper-left-dot ul li.sheji-default:hover {
+        width: 150px;
+        height: 150px;
+        background: url("https://browser5.qhimg.com/t0148355580eb2b57b3.png")
+          no-repeat center;
+        background-size:100%;
+      }
+
+      .swiper-left-dot ul li.yongding-default {
+        width: 150px;
+        height: 150px;
+        background: url("https://browser5.qhimg.com/t01c129e08001a3786d.png")
+          no-repeat center;
+        background-size: 100%;
+        cursor: pointer;
+        margin-top:-60px;
+        margin-bottom:150px;
+      }
+
+      .swiper-left-dot ul li.yongding-default:hover {
+        width: 150px;
+        height: 150px;
+        background: url("https://browser5.qhimg.com/t010d66d00380809cc6.png")
+          no-repeat center;
+        background-size:100%;
+      }
+
+      .swiper-left-dot ul li.wanning-default {
+        width: 150px;
+        height: 150px;
+        background: url("https://browser5.qhimg.com/t018b61939495721f19.png")
+          no-repeat center;
+        background-size: 100%;
+        cursor: pointer;
+        margin-top:-60px;
+      }
+
+      .swiper-left-dot ul li.wanning-default:hover {
+        width: 150px;
+        height: 150px;
+        background: url("https://browser5.qhimg.com/t019a48b52f154b066b.png")
+          no-repeat center;
+        background-size: 100%;
+      }
+
+      .swiper-left-dot ul > li.zhonggu-default.active {
+        width: 150px;
+        height: 150px;
+        background: url("https://browser5.qhimg.com/t01f9d92be7a640153c.png")
+          no-repeat center;
+        background-size: 100%;
+        /*margin-top:20px;*/
+      }
+
+      .swiper-left-dot ul > li.taimiao-default.active {
+        width: 150px;
+        height: 150px;
+        background: url("https://browser5.qhimg.com/t0159331af08ab64707.png")
+          no-repeat center;
+        background-size: 100%;
+      }
+
+      .swiper-left-dot ul > li.tianan-default.active {
+        width: 150px;
+        height: 150px;
+        background: url("https://browser5.qhimg.com/t0165a80785635bc869.png")
+          no-repeat center;
+        background-size: 100%;
+      }
+
+      .swiper-left-dot ul > li.zhengyang-default.active {
+        width: 150px;
+        height: 150px;
+        background: url("https://browser5.qhimg.com/t0123e30e93f7ccb6b7.png")
+          no-repeat center;
+        background-size: 100%;
+      }
+
+      .swiper-left-dot ul > li.tiantan-default.active {
+        width: 150px;
+        height: 150px;
+        background: url("https://browser5.qhimg.com/t01fef58542e5042a51.png")
+          no-repeat center;
+        background-size: 100%;
+      }
+
+      .swiper-left-dot ul > li.xiannong-default.active {
+        width: 150px;
+        height: 150px;
+        background: url("https://browser5.qhimg.com/t010c10f15ec188a381.png")
+          no-repeat center;
+        background-size: 100%;
+      }
+
+      .swiper-left-dot ul > li.gugong-default.active {
+        width: 150px;
+        height: 150px;
+        background: url("https://browser5.qhimg.com/t012f67087d1e807bc8.png")
+          no-repeat center;
+        background-size: 100%;
+      }
+
+      .swiper-left-dot ul > li.jinshan-default.active {
+        width: 150px;
+        height: 150px;
+        background: url("https://browser5.qhimg.com/t0165c4799cf74e9d31.png")
+          no-repeat center;
+        background-size: cover;
+      }
+
+      .swiper-left-dot ul > li.sheji-default.active {
+        width: 150px;
+        height: 150px;
+        background: url("https://browser5.qhimg.com/t0148355580eb2b57b3.png")
+          no-repeat center;
+        background-size: cover;
+      }
+
+      .swiper-left-dot ul > li.yongding-default.active {
+        width: 150px;
+        height: 150px;
+        background: url("https://browser5.qhimg.com/t010d66d00380809cc6.png")
+          no-repeat center;
+        background-size: 100%;
+      }
+
+      .swiper-left-dot ul > li.wanning-default.active {
+        width: 150px;
+        width: 150px;
+        background: url("https://browser5.qhimg.com/t019a48b52f154b066b.png")
+          no-repeat center;
+        background-size: 100%;
+      }
+      /* 左侧中轴线部分结束 */
+      @-webkit-keyframes arrow {
+        0% {
+          opacity: 0;
+        }
+
+        20% {
+          opacity: 1;
+        }
+
+        40% {
+          opacity: 0;
+        }
+
+        60% {
+          opacity: 1;
+        }
+
+        80% {
+          opacity: 0;
+        }
+
+        100% {
+          opacity: 1;
+        }
+      }
+      @keyframes arrow {
+        0% {
+          opacity: 0;
+        }
+
+        20% {
+          opacity: 1;
+        }
+
+        40% {
+          opacity: 0;
+        }
+
+        60% {
+          opacity: 1;
+        }
+
+        80% {
+          opacity: 0;
+        }
+
+        100% {
+          opacity: 1;
+        }
+      }
+
+      .container .btn_wrap {
+        position:fixed;
+        right: 85px;
+        bottom: 25px;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+      }
+
+
+      .container .btn_wrap .webo_btn {
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        background-position: 18px center;
+        font-size: 14px;
+        border-radius: 20px;
+        font-weight: 600;
+        border:0.5px solid #fff;
+        transition: all linear 0.2s;
+        line-height: 40px;
+      }
+
+      .container .btn_wrap .more-btn{
+        font-size: 16px;
+        font-weight: 600;
+        background-color: #fff;
+        color: #e71f19;
+        margin-left: 16px;
+        box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.2);
+        transition: all linear 0.2s;
+      }
+
+      .container .btn_wrap .more-btn:hover {
+          background-color: #e71f19;
+          color: #fff;
+          transition: all linear 0.2s;
+      }
+
+      .container .btn_wrap .more-btn:hover a {
+        color: #fff;
+      }
+
+      .container .btn_wrap  .webo_btn span {
+        display:inline-block;
+        vertical-align: middle;
+      }
+
+      .container .btn_wrap  .webo_btn img{
+        width: 24px;
+        height: 24px;
+        background-size: 100%;
+        display:inline-block;
+        margin-right: 8px;
+        vertical-align: middle;
+      }
+
+      .container .btn_wrap .btn {
+         display:flex;
+         justify-content: center;
+         align-items: center;
+         width:160px;
+         height: 38px;
+         border-radius: 20px;
+         cursor:pointer;
+      }
+      .container .btn_wrap .webo_btn a {
+        color:#fff;
+      }
+      .container .btn_wrap .more-btn a{
+        color: #e71f19;
+        text-decoration: none;
+      }
+      .container .btn_wrap .btn a {
+        width:100%;
+        height:100%;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        text-decoration: none;
+      }
+     /*顶部设置开始*/
+     .top-seting {
+       position:fixed;
+       right:160px;
+       top:32px;
+       display:none;
+     }
+
+     .top-seting-content {
+       display:flex;
+       justify-content: center;
+       align-items: center;
+       font-size: 16px;
+       color:#fff;
+     }
+
+     .top-seting-content .set-btzhi {
+      cursor: pointer;
+     }
+     .top-seting-content .set-wall-icon{
+       display:inline-block;
+      background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAVFBMVEUAAAD///////////////////////////////////////////////////////////////////////////////////////////////////////////8wXzyWAAAAG3RSTlMA4xjJ9GVYvRJJta+PI/uzTjYcCgTr6dvGknClScyMAAAArElEQVQ4y83SORaDMAxFUckjYxgz/v3vMzhOA7ZRkyK3geIdsI9EG6sNMoy2FCiPIq+2wIOdogzlGJ7IgisqqBiWNBwVOWgyUOVAwRBAGTVzHZ5AIWCA02DuhKDFePqLEbjtDnwIFgYwnAQdAvu5/pQJpkucUE/rE9c+CVaNSPfh7V4dgxfwFb/0WPbBnGxEuw9aJLoYiMMSxy0ujLRy8tIKa/9XGiQaKRjoR95JSR/22AkadgAAAABJRU5ErkJggg==) center no-repeat;
+        background-size: cover;
+        display: inline-block;
+        vertical-align: middle;
+        width: 16px;
+        height: 16px;
+        margin-right: 6px;
+     }
+
+     .top-seting-content .line {
+      width: 1px;
+      height: 12px;
+      background: #fff;
+      margin: 0 32px 0 16px;
+     }
+     /*顶部设置结束*/
+
+     /*右边提示气泡开始*/
+     .right-tip-pop {
+      position:fixed;
+      top: 185px;
+      left: 194px;
+      width: 296px;
+      height: 60px;
+      background:url("https://browser5.qhimg.com/t01b23faf2fcfdafc6c.png") no-repeat;
+      background-size: 70%;
+      display:none;
+     }
+     .noneImp{
+      display:none !important;
+     }
+
+     /*右边提示气泡结束*/
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="swiper-container">
+        <!-- 背景图开始 -->
+        <div class="swiper-wrapper">
+          <div class="swiper-slide" id="zhonggu_">
+            <!-- 介绍内容开始 -->
+            <div class="swiper-slide-info">
+              <span class="swiper-slide-info-zhonggu"></span>
+            </div>
+            <!-- 介绍内容结束 -->
+          </div>
+
+          <div class="swiper-slide" id="wanning_">
+            <div class="swiper-slide-info">
+              <span class="swiper-slide-info-wanning"></span>
+            </div>
+          </div>
+
+          <div class="swiper-slide" id="jingshan_">
+            <div class="swiper-slide-info">
+              <span class="swiper-slide-info-jinshan"></span>
+            </div>
+          </div>
+
+          <div class="swiper-slide" id="gugong_">
+            <div class="swiper-slide-info">
+              <span class="swiper-slide-info-gugong"></span>
+            </div>
+          </div>
+
+          <div class="swiper-slide" id="taimiao_">
+            <div class="swiper-slide-info">
+              <span class="swiper-slide-info-taimiao"></span>
+            </div>
+          </div>
+
+          <div class="swiper-slide" id="sheji_">
+            <div class="swiper-slide-info">
+              <span class="swiper-slide-info-sheji"></span>
+            </div>
+          </div>
+
+          <div class="swiper-slide" id="tianan_">
+            <div class="swiper-slide-info">
+              <span class="swiper-slide-info-tianan"></span>
+            </div>
+          </div>
+          <div class="swiper-slide" id="zhengyang_">
+            <div class="swiper-slide-info">
+              <span class="swiper-slide-info-zhengyang"></span>
+            </div>
+          </div>
+          <div class="swiper-slide" id="tiantan_">
+            <div class="swiper-slide-info">
+              <span class="swiper-slide-info-tiantan"></span>
+            </div>
+          </div>
+          <div class="swiper-slide" id="xiannong_">
+            <div class="swiper-slide-info">
+              <span class="swiper-slide-info-xiannong"></span>
+            </div>
+          </div>
+        
+        
+          <div class="swiper-slide" id="yongding_">
+            <div class="swiper-slide-info">
+              <span class="swiper-slide-info-yongding"></span>
+            </div>
+          </div>
+          <div class="swiper-slide" id="wanning_">
+            <div class="swiper-slide-info">
+              <span class="swiper-slide-info-wanning"></span>
+            </div>
+          </div>
+        </div>
+        <!-- 背景图结束 -->
+        <!-- 侧边栏开始 -->
+        <div class="swiper-side">
+          <!-- 滑动条开始 -->
+          <div class="swiper-arrow"></div>
+          <!-- 滑动条结束 -->
+           <!-- 顶部中轴线标题开始 -->
+          <div class="swiper-left-title">
+              <img
+                src="https://browser5.qhimg.com/t017f8f95399a45eb4d.png"
+                alt=""
+              />
+          </div>
+          <div class="swiper-side-out">
+            <div class="swiper-left">
+            <div class="swiper-left-dot">
+              <ul class="swiper-pagination-wrap">
+                <li class="zhonggu-default active" id="zhonggu_" data-bg="https://browser5.qhimg.com/t01ba49b6f734a3f9e5.jpg" data-md5="51e74130b04c905837ce451c6d7f0861"></li>
+                <li class="wanning-default" id="wanning_" data-bg="https://browser5.qhimg.com/t01e92fd2a5b5564446.jpg" data-md5="677dd2b4e276ffb7ecd235daf27269bb"></li>
+                <li class="jinshan-default" id="jingshan_" data-bg="https://browser5.qhimg.com/t0109f3f4ef80597c14.jpg" data-md5="3962166f96e81fa9f8367ba96e712d1c"></li>
+                <li class="gugong-default" id="gugong_" data-bg="https://browser5.qhimg.com/t0128a52ea45a78d603.jpg" data-md5="d453b0b3563a27495663d407ee5b826c"></li>
+                <li class="taimiao-default" id="taimiao_" data-bg="https://browser5.qhimg.com/t01d803a1e7465b40db.jpg" data-md5="e3e719697667deb0d691bb75bb4a695c"></li>
+                 <li class="sheji-default" id="sheji_" data-bg="https://browser5.qhimg.com/t0176de6b2f4fe99263.jpg" data-md5="f8bc65f9ccddca4c53dc9bf16d6bdb9e"></li>
+                <li class="tianan-default" id="tianan_" data-bg="https://browser5.qhimg.com/t01cf393d7d3ac02d67.jpg" data-md5="bb30eac639eaa98de88a73e55443e26e"></li>
+                <li class="zhengyang-default" id="zhengyang_" data-bg="https://browser5.qhimg.com/t016e592f0ed4ae9e14.jpg" data-md5="55a5e6a730c98df1d1f6d7b78966cd66"></li>
+                <li class="tiantan-default" id="tiantan_" data-bg="https://browser5.qhimg.com/t01e73bb0c0895287a4.jpg" data-md5="3ed13816e69f03d09323c4d373df5e4a"></li>
+                <li class="xiannong-default" id="xiannong_" data-bg="https://browser5.qhimg.com/t014c68b0df741f290f.jpg" data-md5="e479738c727d408ce092e574ddb7865a"></li>
+                <li class="yongding-default" id="yongding_" data-bg="https://browser5.qhimg.com/t018b70a504a432a472.jpg" data-md5="d01dbe391cb915f6a7754c52bc989df7"></li>
+              </ul>
+            </div>
+            <!-- 顶部中轴线标题结束 -->
+          </div>
+          </div>
+          <!-- 左侧中轴线开始 -->
+          
+          <!-- 左侧中州线结束 -->
+        </div>
+        <!-- 侧边栏结束 -->
+      </div>
+      <!-- 顶部设为壁纸/设置/结束/ESC开始 -->
+      <div class="top-seting">
+          <ul class="top-seting-content">
+             <li class="set-btzhi"><i class="set-wall-icon"></i>设为壁纸</li>
+             <li class="line"></li>
+          </ul>
+      </div>
+      <!-- 顶部设为壁纸/设置/结束/ESC结束 -->
+      <!-- 底部固定按钮开始 -->
+      <div class="btn_wrap">
+          <div class="webo_btn btn" id="webo_btn"><a href="" target="_blank"><img src="https://browser5.qhimg.com/t01b127134178835be6.png" alt=""><span>微博一键分享</span></a></div>
+          <div class="more-btn btn" id="more-btn"><a target="_blank" href="https://www.so.com/s?q=%E5%8C%97%E4%BA%AC%E4%B8%AD%E8%BD%B4%E7%BA%BF&src=360se_huabao_knowledge&fr=360se_huabao_knowledge&psid=519d3268bd23e431eebd5071405cec50&eci=&nlpv=base_dt_32">了解更多</a></div>
+      </div>
+      <!-- 底部固定按钮结束 -->
+      <!-- 右边提示气泡展示开始 -->
+      <div class="right-tip-pop"></div>
+      <!-- 右边提示气泡展示结束 -->
+    </div>
+    <script src="https://lib.baomitu.com/jquery/2.2.4/jquery.min.js"></script>
+    <!-- <script src="https://apps.bdimg.com/libs/jquery-lazyload/1.9.5/jquery.lazyload.js"></script> -->
+    <script>
+      $(function () {
+          try {
+                external.AppCmd(external.GetSID(window), 'ScreenSaver', 'IsSysPic', '', '', function(code, data){ 
+                    console.log(data,"909090")
+                    if(data == '1'){
+                      $(".top-seting").addClass('noneImp');
+                    }
+                })
+            } catch (error) {
+               console.log(123123,"909090")
+            }
+
+         // xp系统,隐藏掉设置壁纸按钮开始
+          var version = navigator.userAgent,
+              systerm = true;
+          if (version.indexOf("Windows NT 5.1") != -1) {
+              systerm = false;
+              //xp系统隐藏设置壁纸按钮；
+              $(".top-seting").addClass('noneImp');
+          } 
+        // xp系统,一次囊掉设置壁纸按钮结束
+        // 进入页面展示气泡,5秒之后隐藏
+        var rightTipPop = $(".right-tip-pop");
+        rightTipPop.css("display","block");
+        setTimeout(function() {
+          rightTipPop.css("display","none");
+        },5000)
+        // 首次加载时打点
+        var swiperSlides = $(".swiper-wrapper .swiper-slide")
+        var url = "";
+        url = window.location.href; // 获取完整的url
+        var firstShowDot = $("#zhonggu_")[0].id
+        var setBizhiBtn = $(".set-btzhi"); // 设置壁纸
+        var weboBtn = $(".webo_btn");  // 获取微博分享按钮
+        var moreBtn = $(".more-btn");  // 获取了解更多按钮
+        if (url.indexOf("?") !== -1) {
+              var regin = queryString(url);
+              if (regin.isSafe == 0) {
+                // 浏览器
+                var llq = firstShowDot+"llq";
+                sendGif("1279.7078.gif", { " _referer": llq });
+                $(".top-seting").show();
+              } else {
+                var ws = firstShowDot+"ws";
+                // 卫士
+                $(".top-seting").hide();
+                sendGif("1279.7078.gif", { " _referer": ws });
+              }
+        }
+        // 首次加载时打点结束
+
+        // 首次进页面时,给微博一键分享链接赋初始值开始
+        var activeImg = {
+              shareTargetUrl: "https://s.weibo.com/weibo?q=%23%E8%B7%9F%E7%9D%80%E5%B1%8F%E4%BF%9D%E6%B8%B8%E4%B8%AD%E5%9B%BD%23&from=default",
+              shareTitle:"#跟着屏保游中国#我在360画报云逛北京中轴线，领略文化之美！",
+              img: $(".zhonggu-default.active").attr("data-bg")
+          }
+          var targetUrl = activeImg.shareTargetUrl ? 'http://service.weibo.com/share/share.php?title=' +
+          encodeURIComponent(activeImg.shareTitle) +
+          '&url=' +
+          encodeURIComponent(activeImg.shareTargetUrl) +
+          '&pic=' +
+          encodeURIComponent(activeImg.img)
+        : 'http://service.weibo.com/share/share.php?title=' +
+          encodeURIComponent(activeImg.shareTitle) +
+          '&pic=' +
+          encodeURIComponent(activeImg.img)
+          weboBtn.find("a").attr("href",targetUrl);
+          weboBtn.find("a").attr("data-type","zhonggu_"); 
+          moreBtn.find("a").attr("data-type","zhonggu_");
+          setBizhiBtn.attr({"data-img":$(".zhonggu-default.active").attr("data-bg"),"data-md5":"51e74130b04c905837ce451c6d7f0861","data-type":firstShowDot});
+          // 首次进页面时,给微博一键分享链接赋初始值结束
+        
+        var windowH = $(window).height(); // 获取文档可视区域的高度
+        var windowW = $(window).width(); // 获取文档可视区域的宽度
+        var swiperWrapperH = $(".swiper-wrapper"); // 获取swiper-wrapper的可视区域的高度
+        var swiperLeft = $(".swiper-left"); // 获取左侧中轴线高度
+        var swiperLeftTop = swiperLeft.offset().top;
+        var swiperSide = $(".swiper-side");
+        var swiperLeftUl = $(".swiper-left-dot ul");
+        var swiperLeftLi = $(".swiper-left-dot ul li")
+        // swiperWrapperH.css("height", windowH + "px");
+        // swiperLeft.css({"height":windowH - swiperLeftTop+ "px","paddingRight":windowW-swiperLeft.offset().left});
+        // swiperSide.css("height", windowH + "px");
+       
+
+        // 初次点击微博分享按钮
+        // 初次进入页面点击微博分享按钮结束
+
+        // 点击列表
+        swiperLeftUl.on("click", "li", function () {
+          var index = $(this).index();
+          var md5 = $(this).attr("data-md5");
+          var bg = $(this).attr("data-bg");
+          rightTipPop.css("display","none"); // 隐藏右边提示
+          // console.log($(this).attr("data-bg"));
+          if (url.indexOf("?") !== -1) {
+                var regin = queryString(url);
+                if (regin.isSafe == 0) {
+                  console.log("来源浏览器");
+                  // 浏览器
+                  var llq = this.id+"llq";
+                  sendGif("1279.4679.gif", { " _referer": llq });
+                  sendGif("1279.7078.gif", { " _referer": llq });
+                } else {
+                  console.log("来源卫士");
+                  var ws = this.id+"ws";
+                  console.log(ws);
+                  sendGif("1279.4679.gif", { " _referer": ws });
+                  sendGif("1279.7078.gif", { " _referer": ws });
+                }
+          }
+  
+          $(this).addClass("active").siblings().removeClass("active");
+          $(".swiper-wrapper")
+            .find(".swiper-slide")
+            .eq(index)
+            .show()
+            .siblings()
+            .hide();
+
+          var activeImg = {
+              shareTargetUrl: "https://s.weibo.com/weibo?q=%23%E8%B7%9F%E7%9D%80%E5%B1%8F%E4%BF%9D%E6%B8%B8%E4%B8%AD%E5%9B%BD%23&from=default",
+              shareTitle:"#跟着屏保游中国#我在360画报云逛北京中轴线，领略文化之美！",
+              img: $(this).attr("data-bg")
+          }
+          var targetUrl = activeImg.shareTargetUrl ? 'http://service.weibo.com/share/share.php?title=' +
+          encodeURIComponent(activeImg.shareTitle) +
+          '&url=' +
+          encodeURIComponent(activeImg.shareTargetUrl) +
+          '&pic=' +
+          encodeURIComponent(activeImg.img)
+        : 'http://service.weibo.com/share/share.php?title=' +
+          encodeURIComponent(activeImg.shareTitle) +
+          '&pic=' +
+          encodeURIComponent(activeImg.img)
+          weboBtn.find("a").attr("href",targetUrl);  
+          weboBtn.find("a").attr("data-type",this.id);
+          moreBtn.find("a").attr("data-type",this.id);
+          setBizhiBtn.attr({"data-img":bg,"data-md5": md5});
+          setBizhiBtn.attr("data-type",this.id);
+        });
+
+        // 监听鼠标滑动
+        $(document).bind('mousewheel',function(event,delta) {
+           rightTipPop.css("display","none");
+        });
+        // 点击微博一键分享打点
+        weboBtn.click(function() {
+           btnDot(weboBtn,"1279.8367.gif");
+        })
+        // 点击了解更多打点
+        moreBtn.click(function() {
+           btnDot(moreBtn,"1279.7064.gif");
+        })
+
+        function btnDot(elem,gif) {
+          var type = elem.find("a").attr("data-type");
+          if (url.indexOf("?") !== -1) {
+              var regin = queryString(url);
+              if (regin.isSafe == 0) {
+                // 浏览器
+                var llq = type+"llq";
+                sendGif(gif, { " _referer": llq });
+              } else {
+                // 卫士
+                var ws = type+"ws";
+                sendGif(gif, { " _referer": ws });
+              }
+           }
+        }
+
+        
+
+        // 设置壁纸操作
+        setBizhiBtn.off().on('click',function() {
+          var md5 = $(this).attr("data-md5");
+          var img = $(this).attr("data-img");
+          var type = $(this).attr("data-type");
+          console.log(img,md5);
+          console.log("设置壁纸");
+          var llq = type+"llq";
+          sendGif("1279.1521.gif", { " _referer": llq });
+          if(img) {
+            window.parent.postMessage({
+             _img: img,
+             _md5: md5
+            }, '*');
+          }
+          
+        })
+
+        // 获取url的params参数
+        function queryString(str) {
+          let params = str.split("?")[1];
+          let param = params.split("&");
+          let obj = {}; // 用一个对象存储目标值
+          for (let i = 0; i < param.length; i++) {
+            // 循环遍历截取出来的param数组
+            let paramsA = param[i].split("=");
+            let key = paramsA[0];
+            let value = paramsA[1];
+            obj[key] = value;
+          }
+          return obj;
+        }
+
+        // $(".swiper-slide").lazyload({
+        //   effect: "fadeIn",
+        //   event: "mouseover",
+        // });
+
+         // $(window).resize(function() {
+         //   swiperWrapperH.css("height", windowH + "px");
+         // })
+          // 打点
+          function sendGif(filename, data) {
+            var files = [];
+            if (Object.prototype.toString.call(filename) == "[object String]") {
+              files.push(filename);
+            } else if (
+              Object.prototype.toString.call(filename) == "[object Array]"
+            ) {
+              files = filename;
+            } else {
+              return;
+            }
+            files.forEach(function (item) {
+              var params = "";
+              if (data && typeof data == "object") {
+                for (var k in data) {
+                  params += k + "=" + data[k] + "&";
+                }
+              }
+              try {
+                new Image().src =
+                  "//dd.browser.360.cn/static/a/" +
+                  item +
+                  "?" +
+                  params +
+                  "mid=" +
+                  external.GetMID(external.GetSID(window)) +
+                  "&t=" +
+                  Date.now() +
+                  Math.random().toString().replace("0.", "").substr(0, 10);
+              } catch (e) {}
+            });
+          }
+      });
+     
+    </script>
+  </body>
+</html>
