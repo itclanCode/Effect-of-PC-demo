@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>懂车帝</title>
+    <link rel="stylesheet" type="text/css" href="./styles/car-rem.css">
+    <style type="text/css">
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        list-style-type: none;
+        -webkit-text-size-adjust: none;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        text-decoration: none;
+    }
+
+    body,
+    html {
+        min-height: 100%;
+        overflow-y: hidden;
+    }
+
+    .header {
+        width: 100%;
+        height: 3.244444rem;
+        display: flex;
+        justify-content: space-between;
+        padding: 0.711111rem 1.066667rem 0.711111rem 1.311111rem;
+        background: #fff;
+    }
+
+    .header p.tip-text {
+        font-size: 0.488889rem;
+        color: #999999;
+        line-height: 0.888889rem;
+    }
+
+    h2 {
+        font-size: 0.622222rem;
+        color: #000000;
+    }
+
+    .icon-more {
+        width: 0.888889rem;
+        height: 0.888889rem;
+        display: inline-block;
+        vertical-align: middle;
+        margin: 0 0.711111rem 0 0.266667rem;
+    }
+
+    .safari-img {
+        width: 0.888889rem;
+        height: 0.888889rem;
+        display: inline-block;
+        vertical-align: middle;
+        margin-left: 0.266667rem;
+    }
+
+    .tip-more {
+        width: 3.288889rem;
+        height: 1.955556rem;
+    }
+
+
+    .content {
+        width: 100%;
+        height: 100%;
+        background: #F4F5F5;
+        background: url("https://p5.ssl.qhimg.com/t010b8d7a38e9f6ed8f.png") no-repeat left top;
+        background-size: 100%;
+    }
+
+    .logo {
+        width: 5.333333rem;
+        height: 3.333333rem;
+        display: block;
+        margin: 4.333333rem auto 4.222222rem;
+    }
+
+    .open-btn {
+        width: 4.444444rem;
+        height: 1.111111rem;
+        text-align: center;
+        border-radius: 0.133333rem;
+        font-weight: 700;
+        font-size: 0.488889rem;
+        margin: 0 auto;
+        display: block;
+        background: rgb(255, 213, 109);
+        color: rgb(47, 47, 63);
+        line-height: 1.111111rem;
+    }
+    </style>
+</head>
+
+<body>
+    <div>
+        <div class="header">
+            <div>
+                <h2>若已安装懂车帝</h2>
+                <p class="tip-text">点击右上角,<img class="icon-more" src="https://s1.ssl.qhres.com/static/59a788bc8f5109f6.svg"><span class="select-browser-txt">选择浏览器打开</span><img class="safari-img" /></p>
+            </div>
+            <div>
+                <img class="tip-more" alt="">
+            </div>
+        </div>
+        <div class="content">
+            <img class="logo" src="https://p5.ssl.qhimg.com/t0189eaa03e51868a54.png" width="240" height="150" alt="懂车帝">
+            <a class="open-btn" id="open-btn" download>立即打开</a>
+        </div>
+    </div>
+    <script src="https://lib.baomitu.com/jquery/2.2.4/jquery.min.js"></script>
+    <script>
+    /*
+     * @desc:移动端适配js
+     *	
+     */
+    (function(win) {
+        var docEl = win.document.documentElement;
+        var timer = '';
+
+        function changeRem() {
+            var width = docEl.getBoundingClientRect().width;
+            if (width > 720) //最大宽度，若果兼容到ipad的话把这个去掉就行
+            {
+                width = 720;
+            }
+            var fontS = width / 16; //把设备宽度16等分 等同于用vw来做720/16=45,1rem=45px,750/20=37.5
+            docEl.style.fontSize = fontS + "px";
+        }
+        //页面尺寸发生改变的时候就再执行changeRem
+        win.addEventListener("resize", function() {
+            clearTimeout(timer);
+            timer = setTimeout(changeRem, 30);
+        }, false);
+        //页面加载的时候，若果是调用缓存的话就再执行changeRem
+        win.addEventListener("pageshow", function(e) {
+            if (e.persisted) //缓存
+            {
+                clearTimeout(timer);
+                timer = setTimeout(changeRem, 30);
+            }
+        }, false);
+        changeRem();
+    })(window)
+
+    window.onload = function() {
+        var $tipMoreImg = $(".tip-more");
+        var $safariImg = $(".safari-img");
+        var $selectBrowserTxt = $(".select-browser-txt");
+        var $header = $(".header");
+        var openBtn = document.getElementById("open-btn");
+        // 判断是否是微信浏览器
+        // var isWeixin = function() {
+        //     var ua = navigator.userAgent.toLowerCase();
+        //     return ua.match(/MicroMessenger/i) == "micromessenger";
+        // };
+
+        // if (!isWeixin()) {
+        //     // 非微信浏览器,隐藏头部
+        //     $header.css({ "display": "none" })
+        // } else {
+        //     // 微信浏览器,显示头部
+        //     $header.css({ "display": "block" })
+        // }
+        var u = navigator.userAgent;
+        // ios设备
+        var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);
+        // 安卓终端
+        var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1;
+        // 设置不同设备分享图标
+        if (isiOS) {
+            $safariImg.attr("src", "https://s3.ssl.qhres.com/static/c3150eb1e615d9a7.svg");
+            $tipMoreImg.css({ "display": "none" })
+            $selectBrowserTxt.text("选择Safari打开");
+            openBtn.setAttribute("href", "https://itunes.apple.com/cn/app/id1232131998?mt=8")
+        } else if (isAndroid) {
+            $tipMoreImg.attr("src", "https://s2.ssl.qhres.com/static/863c8f0f7bead288.svg");
+            $safariImg.css({ "display": "none" })
+            openBtn.setAttribute("href", "https://s9.pstatp.com/package/apk/automobile/1025_630/automobile_shcz_360liulanqi_v1025_630_b1f6_1618806264.apk?v=1618806267")
+
+        } else {
+            $tipMoreImg.attr("src", "https://s2.ssl.qhres.com/static/863c8f0f7bead288.svg");
+            $safariImg.css({ "display": "none" })
+            openBtn.setAttribute("href", "https://s9.pstatp.com/package/apk/automobile/1025_630/automobile_shcz_360liulanqi_v1025_630_b1f6_1618806264.apk?v=1618806267")
+
+        }
+
+
+        // 添加事件
+        openBtn.onclick = function() {
+            // 打点
+            send("1236.390.gif");
+        }
+
+        // 一进页面时,打点
+        send("1236.1380.gif");
+
+        // 移动端下,禁止用户缩放
+        document.addEventListener('touchstart', function(event) {
+            if (event.touches.length > 1) {
+                event.preventDefault();
+            }
+        });
+        document.addEventListener('gesturestart', function(event) {
+            event.preventDefault();
+        });
+
+        // 打点函数
+        function send(filename, data) {
+            var files = [];
+            if (Object.prototype.toString.call(filename) == '[object String]') {
+                files.push(filename);
+            } else if (Object.prototype.toString.call(filename) == '[object Array]') {
+                files = filename;
+            } else {
+                return;
+            }
+            files.forEach(function(item) {
+                var params = '';
+                if (data && typeof data == 'object') {
+                    for (var k in data) {
+                        params += k + '=' + data[k] + '&';
+                    }
+                }
+                new Image().src = '//dd.browser.360.cn/static/a/' + item + '?' + params + 'mid=' + external.GetMID(external.GetSID(window)) + '&t=' +
+                    Date.now() + Math.random().toString().replace('0.', '').substr(0, 10);
+            })
+        }
+    }
+    </script>
+</body>
+
+</html>
